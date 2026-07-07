@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão Tech — Software House</title>
+    <meta name="description" content="Gestão Tech — Soluções em desenvolvimento web, gestão de TI e automação de processos.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header__inner">
+            <a href="#home" class="header__logo">
+                <img src="logo.jpeg" alt="Gestão Tech Logo" class="header__logo-img">
+            </a>
+            <nav class="nav" id="nav">
+                <ul class="nav__list">
+                    <li><a href="#home" class="nav__link">Home</a></li>
+                    <li><a href="#sobre" class="nav__link">Sobre</a></li>
+                    <li><a href="#servicos" class="nav__link">Serviços</a></li>
+                    <li><a href="#contato" class="nav__link">Contato</a></li>
+                </ul>
+            </nav>
+            <button class="header__toggle" id="menuToggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Home / Hero -->
+    <section class="hero" id="home">
+        <div class="container hero__inner">
+            <h1 class="hero__title">Soluções Tecnológicas<br>para o <span class="highlight">Futuro</span></h1>
+            <p class="hero__subtitle">Desenvolvemos sistemas sob medida, gerenciamos sua infraestrutura de TI e automatizamos processos para impulsionar o crescimento da sua empresa.</p>
+            <div class="hero__cta">
+                <a href="#contato" class="btn btn--primary">Fale Conosco</a>
+                <a href="#servicos" class="btn btn--outline">Nossos Serviços</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nós -->
+    <section class="sobre" id="sobre">
+        <div class="container">
+            <h2 class="section-title">Sobre Nós</h2>
+            <p class="section-subtitle">Conheça nossa história e nossos valores</p>
+            <div class="sobre__grid">
+                <div class="sobre__text">
+                    <p>A <strong>Gestão Tech</strong> nasceu com o propósito de transformar a maneira como as empresas utilizam a tecnologia. Com experiência no mercado de TI, oferecemos soluções completas que vão do desenvolvimento de software à gestão integral da infraestrutura tecnológica.</p>
+                    <p>Nosso time é formado por profissionais apaixonados por inovação, comprometidos em entregar resultados concretos e de alto impacto para o nosso clientes.</p>
+                </div>
+                <div class="sobre__cards">
+                    <div class="card">
+                        
+                        <h3 class="card__title">Missão</h3>
+                        <p class="card__text">Entregar soluções tecnológicas que geram valor real e sustentável para nossos clientes.</p>
+                    </div>
+                    <div class="card">
+                       
+                        <h3 class="card__title">Visão</h3>
+                        <p class="card__text">Ser referência em gestão de TI e desenvolvimento de software no Brasil.</p>
+                    </div>
+                    <div class="card">
+                        <
+                        <h3 class="card__title">Valores</h3>
+                        <p class="card__text">Inovação, transparência, excelência e compromisso com o sucesso do cliente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section class="servicos" id="servicos">
+        <div class="container">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <p class="section-subtitle">Soluções completas para sua empresa</p>
+            <div class="servicos__grid">
+                <div class="servico">
+                    
+                    <h3 class="servico__title">Desenvolvimento Web</h3>
+                    <p class="servico__text">Criamos sites, sistemas e aplicações web sob medida para atender às necessidades específicas do seu negócio. Utilizamos as tecnologias mais modernas do mercado.</p>
+                    <ul class="servico__list">
+                        <li>Sites institucionais</li>
+                        <li>Sistemas web personalizados</li>
+                        <li>E-commerce</li>
+                        <li>APIs e integrações</li>
+                    </ul>
+                </div>
+                <div class="servico">
+                    
+                    <h3 class="servico__title">Gestão de TI</h3>
+                    <p class="servico__text">Cuidamos da infraestrutura tecnológica da sua empresa para que você possa focar no core business. Planejamento estratégico e execução eficiente.</p>
+                    <ul class="servico__list">
+                        <li>Consultoria em TI</li>
+                        <li>Infraestrutura e redes</li>
+                        <li>Segurança da informação</li>
+                        <li>Suporte e manutenção</li>
+                    </ul>
+                </div>
+                <div class="servico">
+                    
+                    <h3 class="servico__title">Automação de Processos</h3>
+                    <p class="servico__text">Automatize tarefas repetitivas e otimize fluxos de trabalho para aumentar a produtividade e reduzir custos operacionais.</p>
+                    <ul class="servico__list">
+                        <li>Automação de workflows</li>
+                        <li>Integração de sistemas</li>
+                        <li>RPA (Automação Robótica)</li>
+                        <li>Dashboards e relatórios</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="contato" id="contato">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <p class="section-subtitle">Vamos conversar sobre o seu projeto</p>
+            <div class="contato__grid">
+                <form class="contato__form" id="contatoForm">
+                    <div class="form-group">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" id="nome" name="nome" class="form-input" placeholder="Seu nome completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone" class="form-label">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" class="form-input" placeholder="(00) 00000-0000">
+                    </div>
+                    <div class="form-group">
+                        <label for="servico" class="form-label">Serviço de Interesse</label>
+                        <select id="servico" name="servico" class="form-input">
+                            <option value="">Selecione um serviço</option>
+                            <option value="web">Desenvolvimento Web</option>
+                            <option value="ti">Gestão de TI</option>
+                            <option value="automacao">Automação de Processos</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem" class="form-label">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" class="form-input" rows="5" placeholder="Descreva seu projeto ou necessidade..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full">Enviar Mensagem</button>
+                </form>
+                <div class="contato__info">
+                    <div class="contato__info-item">
+                        <h3> E-mail</h3>
+                        <p>contato@gestaotech.com.br</p>
+                    </div>
+                    <div class="contato__info-item">
+                        <h3> Telefone</h3>                        <p>(11) 99999-0000</p>
+                    </div>
+                    <div class="contato__info-item">
+                        <h3> Horário</h3>
+                        <p>Seg — Sex: 09:00 — 18:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <p>&copy; 2026 Gestão Tech. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
