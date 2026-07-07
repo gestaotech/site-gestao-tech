@@ -488,11 +488,15 @@ select.form-input {
 }
 
 /* ==============================
-   RESPONSIVE — TABLET
+   RESPONSIVE — TABLET (768px - 1024px)
    ============================== */
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 24px;
+    }
+
     .hero__title {
-        font-size: 2.4rem;
+        font-size: 2.6rem;
     }
 
     .sobre__grid {
@@ -502,32 +506,58 @@ select.form-input {
 
     .servicos__grid {
         grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
+
+    .servico {
+        padding: 32px 24px;
     }
 
     .contato__grid {
         grid-template-columns: 1fr;
         gap: 40px;
     }
+
+    .section-title {
+        font-size: 1.9rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
 }
 
 /* ==============================
-   RESPONSIVE — MOBILE
+   RESPONSIVE — MOBILE (max 768px)
    ============================== */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .header__inner {
+        height: 70px;
+    }
+
+    .header__logo-img {
+        height: 40px;
+    }
+
     .header__toggle {
         display: flex;
     }
 
     .nav {
         position: fixed;
-        top: 80px;
+        top: 70px;
         left: 0;
         right: 0;
         background: var(--white);
         box-shadow: var(--shadow);
         transform: translateY(-120%);
         transition: var(--transition);
-        padding: 20px;
+        padding: 16px;
     }
 
     .nav.active {
@@ -543,6 +573,7 @@ select.form-input {
         display: block;
         padding: 14px 0;
         border-bottom: 1px solid var(--border);
+        font-size: 1rem;
     }
 
     .nav__link::after {
@@ -551,31 +582,182 @@ select.form-input {
 
     .hero {
         min-height: auto;
-        padding: 120px 0 80px;
+        padding: 100px 0 60px;
     }
 
     .hero__title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .hero__subtitle {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        margin-bottom: 32px;
     }
 
     .hero__cta {
         flex-direction: column;
+        gap: 12px;
     }
 
     .hero__cta .btn {
         text-align: center;
+        padding: 14px 24px;
+    }
+
+    .sobre {
+        padding: 60px 0;
+    }
+
+    .sobre__text p {
+        font-size: 1rem;
+    }
+
+    .card {
+        padding: 24px;
+    }
+
+    .servicos {
+        padding: 60px 0;
     }
 
     .servicos__grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .servico {
+        padding: 28px 20px;
+    }
+
+    .servico__icon {
+        font-size: 2rem;
+    }
+
+    .servico__title {
+        font-size: 1.15rem;
+    }
+
+    .servico__text {
+        font-size: 0.9rem;
+    }
+
+    .contato {
+        padding: 60px 0;
+    }
+
+    .contato__grid {
+        gap: 32px;
+    }
+
+    .form-input {
+        padding: 12px 14px;
+        font-size: 0.95rem;
     }
 
     .section-title {
-        font-size: 1.7rem;
+        font-size: 1.6rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 32px;
+    }
+
+    .footer {
+        padding: 20px 0;
+    }
+
+    .footer__inner p {
+        font-size: 0.8rem;
+    }
+}
+
+/* ==============================
+   RESPONSIVE — MOBILE PEQUENO (max 480px)
+   ============================== */
+@media (max-width: 480px) {
+    .hero__title {
+        font-size: 1.5rem;
+    }
+
+    .hero__subtitle {
+        font-size: 0.9rem;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+    }
+
+    .card__title {
+        font-size: 1.05rem;
+    }
+
+    .card__text {
+        font-size: 0.85rem;
+    }
+
+    .servico__title {
+        font-size: 1.05rem;
+    }
+
+    .contato__info-item h3 {
+        font-size: 1rem;
+    }
+
+    .contato__info-item p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+
+    .form-input {
+        padding: 14px 12px;
+    }
+
+    .form-label {
+        font-size: 0.9rem;
+    }
+}
+
+/* ==============================
+   TOUCH-friendly targets
+   ============================== */
+@media (hover: none) and (pointer: coarse) {
+    .nav__link {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    .btn {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form-input {
+        min-height: 44px;
+    }
+}
+
+/* ==============================
+   LARGE SCREENS (1440px+)
+   ============================== */
+@media (min-width: 1440px) {
+    :root {
+        --max-width: 1320px;
+    }
+
+    .hero__title {
+        font-size: 3.5rem;
+    }
+
+    .hero__subtitle {
+        font-size: 1.3rem;
     }
 }
 
