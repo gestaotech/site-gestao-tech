@@ -94,10 +94,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const msgEncoded = encodeURIComponent(texto);
         const whatsappURL = `https://wa.me/5561998361296?text=${msgEncoded}`;
 
-        window.open(whatsappURL, '_blank');
-
-        showNotification('Redirecionando para o WhatsApp...', 'success');
-        form.reset();
+        const link = document.createElement('a');
+        link.href = whatsappURL;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     });
 
     function showNotification(message, type) {
