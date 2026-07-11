@@ -69,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const nome = document.getElementById('nome').value.trim();
         const telefone = document.getElementById('telefone').value.trim();
+        const servico = document.getElementById('servico').value;
         const mensagem = document.getElementById('mensagem').value.trim();
 
         if (!nome || !telefone || !mensagem) {
@@ -76,18 +77,27 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Simular envio
-        const btn = form.querySelector('.btn');
-        const originalText = btn.textContent;
-        btn.textContent = 'Enviando...';
-        btn.disabled = true;
+        const servicos = {
+            'web': 'Desenvolvimento Web',
+            'ti': 'Gestão de T.I',
+            'automacao': 'Automação de Processos',
+            'desenvolvimento': 'Desenvolvimento de Sistemas Personalizados'
+        };
 
-        setTimeout(() => {
-            showNotification('Mensagem enviada com sucesso! Entraremos em contato em breve.', 'success');
-            form.reset();
-            btn.textContent = originalText;
-            btn.disabled = false;
-        }, 1500);
+        let texto = `Olá! sou o(a) *${nome}*.\n`;
+        texto += `Telefone: ${telefone}\n`;
+        if (servico) {
+            texto += `Serviço de interesse: ${servicos[servico]}\n`;
+        }
+        texto += `\n${mensagem}`;
+
+        const msgEncoded = encodeURIComponent(texto);
+        const whatsappURL = `https://wa.me/5561998361296?text=${msgEncoded}`;
+
+        window.open(whatsappURL, '_blank');
+
+        showNotification('Redirecionando para o WhatsApp...', 'success');
+        form.reset();
     });
 
     function showNotification(message, type) {
