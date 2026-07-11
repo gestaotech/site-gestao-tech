@@ -472,6 +472,18 @@ select.form-input {
     color: var(--text-light);
 }
 
+.whatsapp-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.whatsapp-link:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
 /* ==============================
    FOOTER
    ============================== */

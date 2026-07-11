@@ -68,16 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
 
         const nome = document.getElementById('nome').value.trim();
-        const email = document.getElementById('email').value.trim();
+        const telefone = document.getElementById('telefone').value.trim();
         const mensagem = document.getElementById('mensagem').value.trim();
 
-        if (!nome || !email || !mensagem) {
+        if (!nome || !telefone || !mensagem) {
             showNotification('Por favor, preencha todos os campos obrigatórios.', 'error');
-            return;
-        }
-
-        if (!isValidEmail(email)) {
-            showNotification('Por favor, insira um e-mail válido.', 'error');
             return;
         }
 
@@ -94,10 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.disabled = false;
         }, 1500);
     });
-
-    function isValidEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
 
     function showNotification(message, type) {
         // Remover notificação existente
