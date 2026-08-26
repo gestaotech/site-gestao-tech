@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
         nav.classList.toggle('active');
     });
 
-    // Fechar menu ao clicar em um link
     nav.querySelectorAll('.nav__link').forEach(link => {
         link.addEventListener('click', () => {
             menuToggle.classList.remove('active');
@@ -20,16 +19,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // =====================
-    // HEADER SCROLL EFFECT
+    // ACTIVE NAV LINK ON SCROLL
     // =====================
-    const header = document.getElementById('header');
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav__link');
 
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.12)';
-        } else {
-            header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
-        }
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
     });
 
     // =====================
@@ -37,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // =====================
     const observerOptions = {
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        rootMargin: '0px 0px -40px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -49,9 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // Adicionar animação a elementos
     const animateElements = document.querySelectorAll(
-        '.sobre__text, .card, .servico, .contato__form, .contato__info, .hero__inner'
+        '.sobre__text, .sobre__card, .servico, .contato__form, .contato__info, .hero__inner'
     );
 
     animateElements.forEach(el => {
@@ -73,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const mensagem = document.getElementById('mensagem').value.trim();
 
         if (!nome || !telefone || !mensagem) {
-            showNotification('Por favor, preencha todos os campos obrigatórios.', 'error');
+            showNotification('Preencha todos os campos obrigatórios.', 'error');
             return;
         }
 
@@ -104,7 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function showNotification(message, type) {
-        // Remover notificação existente
         const existing = document.querySelector('.notification');
         if (existing) existing.remove();
 
@@ -112,37 +118,16 @@ document.addEventListener('DOMContentLoaded', () => {
         notification.className = `notification notification--${type}`;
         notification.textContent = message;
 
-        // Estilos inline para a notificação
-        Object.assign(notification.style, {
-            position: 'fixed',
-            bottom: '24px',
-            right: '24px',
-            padding: '16px 24px',
-            borderRadius: '8px',
-            color: '#fff',
-            fontWeight: '600',
-            fontSize: '0.95rem',
-            zIndex: '9999',
-            boxShadow: '0 8px 30px rgba(0,0,0,0.2)',
-            transform: 'translateY(20px)',
-            opacity: '0',
-            transition: 'all 0.3s ease',
-            maxWidth: '400px',
-            background: type === 'success' ? '#0d7377' : '#e8822a'
-        });
-
         document.body.appendChild(notification);
 
-        // Animar entrada
         requestAnimationFrame(() => {
-            notification.style.transform = 'translateY(0)';
             notification.style.opacity = '1';
+            notification.style.transform = 'translateY(0)';
         });
 
-        // Remover após 4 segundos
         setTimeout(() => {
-            notification.style.transform = 'translateY(20px)';
             notification.style.opacity = '0';
+            notification.style.transform = 'translateY(20px)';
             setTimeout(() => notification.remove(), 300);
         }, 4000);
     }
