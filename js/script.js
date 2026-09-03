@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     const animateElements = document.querySelectorAll(
-        '.sobre__text, .sobre__card, .servico, .contato__form, .contato__info, .hero__inner'
+        '.sobre__text, .sobre__card, .servico, .produto, .contato__form, .contato__info, .hero__inner'
     );
 
     animateElements.forEach(el => {
