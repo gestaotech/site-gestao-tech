@@ -17,17 +17,18 @@
         <div class="container header__inner">
             <a href="#home" class="header__logo">
                 <img src="logo.jpeg" alt="Gestão Tech Logo" class="header__logo-img">
-                <span class="header__logo-text">Gestão<br>Tech</span>
+                <span class="header__logo-text">Gestão<br><small>Tech</small></span>
             </a>
             <nav class="nav" id="nav">
                 <ul class="nav__list">
                     <li><a href="#home" class="nav__link active">Home</a></li>
                     <li><a href="#sobre" class="nav__link">Sobre</a></li>
                     <li><a href="#servicos" class="nav__link">Serviços</a></li>
-                    <li><a href="#produtos" class="nav__link">Produtos</a></li>
+                    <li><a href="#solucoes" class="nav__link">Soluções</a></li>
                     <li><a href="#contato" class="nav__link">Contato</a></li>
                 </ul>
             </nav>
+            <a href="#contato" class="btn btn--primary header__cta">Fale Conosco</a>
             <button class="header__toggle" id="menuToggle" aria-label="Menu">
                 <span></span>
                 <span></span>
@@ -39,17 +40,52 @@
     <!-- Home / Hero -->
     <section class="hero" id="home">
         <div class="hero__inner">
-            <div>
-                <h1 class="hero__title">Soluções Tecnológicas<br>para o <span class="highlight">Futuro</span></h1>
+            <div class="hero__content">
+                <span class="hero__badge">Software House · 2026</span>
+                <h1 class="hero__title">Soluções Tecnológicas<br>para o seu <span class="highlight">Futuro</span></h1>
                 <p class="hero__subtitle">Desenvolvemos sistemas sob medida, gerenciamos sua infraestrutura de TI e automatizamos processos para impulsionar o crescimento da sua empresa.</p>
                 <div class="hero__cta">
                     <a href="#contato" class="btn btn--primary">Fale Conosco</a>
                     <a href="#servicos" class="btn btn--outline">Nossos Serviços</a>
                 </div>
             </div>
-            <div class="hero__meta">
-                GESTÃO TECH · v1.0<br>
-                DESENVOLVIMENTO · TI · AUTOMAÇÃO
+            <div class="hero__visual">
+                <div class="hero__card hero__card--main">
+                    <div class="hero__card-head">
+                        <span class="hero__card-dot"></span>
+                        <span class="hero__card-dot"></span>
+                        <span class="hero__card-dot"></span>
+                        <span class="hero__card-title">dashboard.gestaotech</span>
+                    </div>
+                    <div class="hero__card-body">
+                        <div class="hero__chart">
+                            <span style="height: 42%"></span>
+                            <span style="height: 68%"></span>
+                            <span style="height: 55%"></span>
+                            <span style="height: 82%"></span>
+                            <span style="height: 70%"></span>
+                            <span style="height: 92%"></span>
+                            <span style="height: 78%"></span>
+                        </div>
+                        <div class="hero__metrics">
+                            <div class="hero__metric">
+                                <span class="hero__metric-value" data-count="120">0</span>
+                                <span class="hero__metric-label">Projetos ativos</span>
+                            </div>
+                            <div class="hero__metric">
+                                <span class="hero__metric-value">24/7</span>
+                                <span class="hero__metric-label">Monitoramento</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero__card hero__card--float">
+                    <span class="hero__float-status"></span>
+                    <div>
+                        <strong>Automação ativa</strong>
+                        <span>RPA em produção</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -75,64 +111,58 @@
     <!-- Sobre Nós -->
     <section class="sobre" id="sobre">
         <div class="container">
-            <span class="section-label">[ 01 — Quem Somos ]</span>
-            <h2 class="section-title">Sobre Nós</h2>
-            <p class="section-subtitle">Conheça nossa história e nossos valores</p>
-        </div>
-        <div class="sobre__grid">
-            <div class="sobre__text fade-in">
-                <p>A <strong>Gestão Tech</strong> nasceu com o propósito de transformar a maneira como as empresas utilizam a tecnologia. Com experiência no mercado de TI, oferecemos soluções completas que vão do desenvolvimento de software à gestão integral da infraestrutura tecnológica.</p>
-                <p>Nosso time é formado por profissionais apaixonados por inovação, comprometidos em entregar resultados concretos e de alto impacto para o nosso clientes.</p>
+            <div class="sobre__header">
+                <div class="sobre__header-text">
+                    <span class="section-label">[ 01 — Quem Somos ]</span>
+                    <h2 class="section-title">Sobre Nós</h2>
+                    <p class="section-subtitle">Conheça nossa história e nossos valores</p>
+                </div>
+                
             </div>
-            <div class="sobre__cards">
-                <div class="sobre__card sobre__card--missao fade-in">
-                    <span class="sobre__card-num">#01</span>
-                    <h3 class="sobre__card-title">Missão</h3>
-                    <p class="sobre__card-text">Entregar soluções tecnológicas que geram valor real e sustentável para nossos clientes.</p>
+            <div class="sobre__grid">
+                <div class="sobre__text fade-in">
+                    <p>A <strong>Gestão Tech</strong> nasceu com o propósito de transformar a maneira como as empresas utilizam a tecnologia. Com experiência no mercado de TI, oferecemos soluções completas que vão do desenvolvimento de software à gestão integral da infraestrutura tecnológica.</p>
+                    <p>Nosso time é formado por profissionais apaixonados por inovação, comprometidos em entregar resultados concretos e de alto impacto para os nossos clientes.</p>
+                    <a href="#contato" class="btn btn--outline">Vamos conversar →</a>
                 </div>
-                <div class="sobre__card sobre__card--visao fade-in">
-                    <span class="sobre__card-num">#02</span>
-                    <h3 class="sobre__card-title">Visão</h3>
-                    <p class="sobre__card-text">Ser referência em gestão de TI e desenvolvimento de software no Brasil.</p>
-                </div>
-                <div class="sobre__card sobre__card--valores fade-in">
-                    <span class="sobre__card-num">#03</span>
-                    <h3 class="sobre__card-title">Valores</h3>
-                    <p class="sobre__card-text">Inovação, transparência, excelência e compromisso com o sucesso do cliente.</p>
+                <div class="sobre__cards">
+                    <div class="sobre__card sobre__card--missao fade-in">
+                        <span class="sobre__card-num">#01</span>
+                        <h3 class="sobre__card-title">Missão</h3>
+                        <p class="sobre__card-text">Entregar soluções tecnológicas que geram valor real e sustentável para nossos clientes.</p>
+                    </div>
+                    <div class="sobre__card sobre__card--visao fade-in">
+                        <span class="sobre__card-num">#02</span>
+                        <h3 class="sobre__card-title">Visão</h3>
+                        <p class="sobre__card-text">Ser referência em gestão de TI e desenvolvimento de software no Brasil.</p>
+                    </div>
+                    <div class="sobre__card sobre__card--valores fade-in">
+                        <span class="sobre__card-num">#03</span>
+                        <h3 class="sobre__card-title">Valores</h3>
+                        <p class="sobre__card-text">Inovação, transparência, excelência e compromisso com o sucesso do cliente.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Marquee Strip -->
-    <div class="section-strip" style="background: var(--brutal-bg);">
-        <div class="section-strip__track">
-            <span>Web Development</span><span class="section-strip__dot"></span>
-            <span>IT Management</span><span class="section-strip__dot"></span>
-            <span>Process Automation</span><span class="section-strip__dot"></span>
-            <span>Cloud Infrastructure</span><span class="section-strip__dot"></span>
-            <span>Custom Systems</span><span class="section-strip__dot"></span>
-            <span>Web Development</span><span class="section-strip__dot"></span>
-            <span>IT Management</span><span class="section-strip__dot"></span>
-            <span>Process Automation</span><span class="section-strip__dot"></span>
-            <span>Cloud Infrastructure</span><span class="section-strip__dot"></span>
-            <span>Custom Systems</span><span class="section-strip__dot"></span>
-        </div>
-    </div>
-
     <!-- Serviços -->
     <section class="servicos" id="servicos">
         <div class="container">
-            <span class="section-label">[ 02 — O que fazemos ]</span>
-            <h2 class="section-title">Nossos Serviços</h2>
-            <p class="section-subtitle">Soluções completas para sua empresa</p>
-        </div>
-        <div class="container" style="padding-top: 0;">
+            <div class="servicos__header">
+                <div class="servicos__header-text">
+                    <span class="section-label">[ 02 — O que fazemos ]</span>
+                    <h2 class="section-title">Nossos Serviços</h2>
+                    <p class="section-subtitle">Soluções completas para sua empresa</p>
+                </div>
+            </div>
             <div class="servicos__grid">
                 <div class="servico fade-in">
-                    <span class="servico__num">Serviço #01</span>
+                    <div class="servico__head">
+                        <span class="servico__num">Serviço #01</span>
+                    </div>
                     <h3 class="servico__title">Desenvolvimento Web</h3>
-                    <p class="servico__text">Criamos sites, sistemas e aplicações web sob medida para atender às necessidades específicas do seu negócio. Utilizamos as tecnologias mais modernas do mercado.</p>
+                    <p class="servico__text">Criamos sites, sistemas e aplicações web sob medida para atender às necessidades específicas do seu negócio, com as tecnologias mais modernas do mercado.</p>
                     <ul class="servico__list">
                         <li>Sites institucionais</li>
                         <li>Sistemas web personalizados</li>
@@ -141,18 +171,16 @@
                     </ul>
                 </div>
                 <div class="servico fade-in">
-                    <span class="servico__num">Serviço #02</span>
+                    <div class="servico__head">
+                        <span class="servico__num">Serviço #02</span>
+                    </div>
                     <h3 class="servico__title">Gestão de TI</h3>
                     <p class="servico__text">Cuidamos da infraestrutura tecnológica da sua empresa para que você possa focar no core business. Planejamento estratégico e execução eficiente.</p>
-                    <ul class="servico__list">
-                        <li>Consultoria em TI</li>
-                        <li>Infraestrutura e redes</li>
-                        <li>Segurança da informação</li>
-                        <li>Suporte e manutenção</li>
-                    </ul>
                 </div>
-                <div class="servico fade-in">
-                    <span class="servico__num">Serviço #03</span>
+                <div class="servico servico--wide fade-in">
+                    <div class="servico__head">
+                        <span class="servico__num">Serviço #03</span>
+                    </div>
                     <h3 class="servico__title">Automação de Processos</h3>
                     <p class="servico__text">Automatize tarefas repetitivas e otimize fluxos de trabalho para aumentar a produtividade e reduzir custos operacionais.</p>
                     <ul class="servico__list">
@@ -165,129 +193,99 @@
         </div>
     </section>
 
-    <!-- Marquee Strip -->
-    <div class="section-strip">
-        <div class="section-strip__track">
-            <span>Contato</span><span class="section-strip__dot" style="background: var(--brutal-blue);"></span>
-            <span>Orçamento</span><span class="section-strip__dot" style="background: var(--brutal-blue);"></span>
-            <span>Projetos</span><span class="section-strip__dot" style="background: var(--brutal-blue);"></span>
-            <span>Parceria</span><span class="section-strip__dot" style="background: var(--brutal-blue);"></span>
-            <span>Contato</span><span class="section-strip__dot" style="background: var(--brutal-blue);"></span>
-            <span>Orçamento</span><span class="section-strip__dot" style="background: var(--brutal-blue);"></span>
-            <span>Projetos</span><span class="section-strip__dot" style="background: var(--brutal-blue);"></span>
-            <span>Parceria</span><span class="section-strip__dot" style="background: var(--brutal-blue);"></span>
-        </div>
-    </div>
-
-    <!-- Produtos -->
-    <section class="produtos" id="produtos">
+    <!-- Soluções -->
+    <section class="solucoes" id="solucoes">
         <div class="container">
-            <div class="produtos__header">
-                <span class="section-label">[ 03 — Nossos Produtos ]</span>
-                <h2 class="section-title">Produtos <em>Prontos</em></h2>
+            <div class="solucoes__header">
+                <span class="section-label">[ 03 — Nossas Soluções ]</span>
+                <h2 class="section-title">Soluções <em>Prontas</em></h2>
                 <p class="section-subtitle">Soluções prontas para acelerar seu negócio</p>
             </div>
-            <div class="produtos__grid">
-                <article class="produto fade-in">
-                    <div class="produto__head">
-                        <span class="produto__tag">PRONTO</span>
-                        <span class="produto__id">P—01</span>
+            <div class="solucoes__grid">
+                <article class="solucao fade-in">
+                    <div class="solucao__head">
+                        <span class="solucao__tag">PRONTO</span>
+                        <span class="solucao__id">S—01</span>
                     </div>
-                    <div class="produto__block">
-                        <h3 class="produto__title">GT<br>Restaurante</h3>
-                        <span class="produto__cat">Sistema completo para restaurantes</span>
+                    <div class="solucao__block">
+                        <h3 class="solucao__title">GT<br>Restaurantes</h3>
+                        <span class="solucao__cat">Sistema completo para restaurantes</span>
                     </div>
-                    <p class="produto__text">Gerencie mesas, cardápio, estoque, vendas e relatórios em um só lugar.
-Teste grátis por 7 dias, sem cartão de crédito</p>
-
-                    <ul class="produto__features">
+                    <p class="solucao__text">Gerencie mesas, cardápio, estoque, vendas e relatórios em um só lugar</p>
+                    <ul class="solucao__features">
                         <li>Gestão Completa</li>
-                        <li>Mesas / PDV</li>
-                        <li>Controle de Estoque</li>
                         <li>Pedidos</li>
+                        <li>Cardápio Digital</li>
+                        <li>Relatórios em tempo real</li>
                     </ul>
-                    <div class="produto__footer">
-                        <div class="produto__price">
-                            <span class="produto__price-label">A partir de</span>
-                            <span class="produto__price-value">R$ 99,00</span>
+                    <div class="solucao__footer">
+                        <div class="solucao__price">
+                            <span class="solucao__price-label">A partir de</span>
+                            <span class="solucao__price-value">R$ 99,00</span>
                         </div>
-                        <a href="https://gest-o-de-restaurantes.vercel.app/" class="produto__cta">Adquirir →</a>
+                        <a href="https://gest-o-de-restaurantes.vercel.app/" class="solucao__cta">Adquirir →</a>
                     </div>
                 </article>
-                <!-- <article class="produto produto--featured fade-in">
-                    <div class="produto__head">
-                        <span class="produto__tag produto__tag--hot">MAIS VENDIDO</span>
-                        <span class="produto__id">P—02</span>
+                <!-- <article class="solucao solucao--featured fade-in">
+                    <div class="solucao__head">
+                        <span class="solucao__tag solucao__tag--hot">MAIS VENDIDO</span>
+                        <span class="solucao__id">P—02</span>
                     </div>
-                    <div class="produto__block">
-                        <h3 class="produto__title">GT<br>Gestor</h3>
-                        <span class="produto__cat">ERP Modular</span>
+                    <div class="solucao__block">
+                        <h3 class="solucao__title">GT<br>Gestor</h3>
+                        <span class="solucao__cat">ERP Modular</span>
                     </div>
-                    <p class="produto__text">Sistema ERP modular para gestão empresarial. Controle financeiro, vendas, estoque e clientes em uma única plataforma</p>
-                    <ul class="produto__features">
+                    <p class="solucao__text">Sistema ERP modular para gestão empresarial. Controle financeiro, vendas, estoque e clientes em uma única plataforma.</p>
+                    <ul class="solucao__features">
                         <li>Módulos personalizáveis</li>
                         <li>Dashboard executivo</li>
                         <li>Multi-usuário</li>
                         <li>API aberta</li>
                     </ul>
-                    <div class="produto__footer">
-                        <div class="produto__price">
-                            <span class="produto__price-label">A partir de</span>
-                            <span class="produto__price-value">R$ 4.800</span>
+                    <div class="solucao__footer">
+                        <div class="solucao__price">
+                            <span class="solucao__price-label">A partir de</span>
+                            <span class="solucao__price-value">R$ 4.800</span>
                         </div>
-                        <a href="#contato" class="produto__cta">Adquirir →</a>
+                        <a href="#contato" class="solucao__cta">Adquirir →</a>
                     </div>
                 </article>
-                <article class="produto fade-in">
-                    <div class="produto__head">
-                        <span class="produto__tag">PRONTO</span>
-                        <span class="produto__id">P—03</span>
+                <article class="solucao fade-in">
+                    <div class="solucao__head">
+                        <span class="solucao__tag">PRONTO</span>
+                        <span class="solucao__id">P—03</span>
                     </div>
-                    <div class="produto__block">
-                        <h3 class="produto__title">GT<br>Agenda</h3>
-                        <span class="produto__cat">Booking System</span>
+                    <div class="solucao__block">
+                        <h3 class="solucao__title">GT<br>Agenda</h3>
+                        <span class="solucao__cat">Booking System</span>
                     </div>
-                    <p class="produto__text">Sistema de agendamento online com notificações automáticas, gestão de profissionais e relatórios de atendimento</p>
-                    <ul class="produto__features">
+                    <p class="solucao__text">Sistema de agendamento online com notificações automáticas, gestão de profissionais e relatórios de atendimento.</p>
+                    <ul class="solucao__features">
                         <li>Agenda online 24/7</li>
                         <li>Notificações automáticas</li>
                         <li>Pagamento antecipado</li>
                         <li>Relatórios gerenciais</li>
                     </ul>
-                    <div class="produto__footer">
-                        <div class="produto__price">
-                            <span class="produto__price-label">A partir de</span>
-                            <span class="produto__price-value">R$ 1.800</span>
+                    <div class="solucao__footer">
+                        <div class="solucao__price">
+                            <span class="solucao__price-label">A partir de</span>
+                            <span class="solucao__price-value">R$ 1.800</span>
                         </div>
-                        <a href="#contato" class="produto__cta">Adquirir →</a>
+                        <a href="#contato" class="solucao__cta">Adquirir →</a>
                     </div>
-                </article> -->
+                </article>
             </div>
-        </div>
+        </div> -->
     </section>
-
-    <!-- Marquee Strip -->
-    <div class="section-strip">
-        <div class="section-strip__track">
-            <span>Contato</span><span class="section-strip__dot"></span>
-            <span>Orçamento</span><span class="section-strip__dot"></span>
-            <span>Projetos</span><span class="section-strip__dot"></span>
-            <span>Parceria</span><span class="section-strip__dot"></span>
-            <span>Contato</span><span class="section-strip__dot"></span>
-            <span>Orçamento</span><span class="section-strip__dot"></span>
-            <span>Projetos</span><span class="section-strip__dot"></span>
-            <span>Parceria</span><span class="section-strip__dot"></span>
-        </div>
-    </div>
 
     <!-- Contato -->
     <section class="contato" id="contato">
         <div class="container">
-            <span class="section-label">[ 04 — Fale Conosco ]</span>
-            <h2 class="section-title">Entre em Contato</h2>
-            <p class="section-subtitle">Vamos conversar sobre o seu projeto</p>
-        </div>
-        <div class="container" style="padding-top: 0;">
+            <div class="contato__header">
+                <span class="section-label">[ 04 — Fale Conosco ]</span>
+                <h2 class="section-title">Entre em Contato</h2>
+                <p class="section-subtitle">Vamos conversar sobre o seu projeto</p>
+            </div>
             <div class="contato__grid">
                 <form class="contato__form fade-in" id="contatoForm">
                     <div class="form-group">
@@ -315,6 +313,7 @@ Teste grátis por 7 dias, sem cartão de crédito</p>
                     <button type="submit" class="btn btn--primary btn--full">Enviar Mensagem →</button>
                 </form>
                 <div class="contato__info fade-in">
+                    <span class="section-label section-label--dark">Informações</span>
                     <div class="contato__info-item">
                         <span class="contato__info-label">WhatsApp</span>
                         <p class="contato__info-text"><a href="https://wa.me/5561998361296" target="_blank" class="whatsapp-link">(61) 99836-1296</a></p>
@@ -325,10 +324,10 @@ Teste grátis por 7 dias, sem cartão de crédito</p>
                         <p class="contato__info-text">Seg — Sex</p>
                         <p class="contato__info-extra">09:00 — 18:00</p>
                     </div>
-                    <!-- <div class="contato__info-item">
+                    <div class="contato__info-item">
                         <span class="contato__info-label">Email</span>
                         <p class="contato__info-text">contato@gestaotech.com</p>
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -336,13 +335,14 @@ Teste grátis por 7 dias, sem cartão de crédito</p>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer__inner">
+        <div class="container footer__inner">
             <p class="footer__copy">© 2026 Gestão Tech · Todos os direitos reservados</p>
+            <div class="footer__brand">Gestão<span>Tech</span></div>
             <div class="footer__links">
                 <a href="#home" class="footer__link">Home</a>
                 <a href="#sobre" class="footer__link">Sobre</a>
                 <a href="#servicos" class="footer__link">Serviços</a>
-                <a href="#produtos" class="footer__link">Produtos</a>
+                <a href="#solucoes" class="footer__link">Soluções</a>
                 <a href="#contato" class="footer__link">Contato</a>
             </div>
         </div>

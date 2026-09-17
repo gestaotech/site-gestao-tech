@@ -1,6 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // =====================
+    // HEADER SCROLL SHADOW
+    // =====================
+    const header = document.getElementById('header');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 10) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    }, { passive: true });
+
+    // =====================
     // MENU MOBILE
     // =====================
     const menuToggle = document.getElementById('menuToggle');
@@ -24,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav__link');
 
-    window.addEventListener('scroll', () => {
+    function updateActiveLink() {
         let current = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop - 100;
@@ -38,7 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 link.classList.add('active');
             }
         });
-    });
+    }
+
+    window.addEventListener('scroll', updateActiveLink, { passive: true });
+    updateActiveLink();
 
     // =====================
     // SCROLL ANIMATIONS
@@ -58,13 +74,45 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     const animateElements = document.querySelectorAll(
-        '.sobre__text, .sobre__card, .servico, .produto, .contato__form, .contato__info, .hero__inner'
+        '.sobre__text, .sobre__card, .servico, .solucao, .contato__form, .contato__info, .hero__inner'
     );
 
     animateElements.forEach(el => {
         el.classList.add('fade-in');
         observer.observe(el);
     });
+
+    // =====================
+    // COUNTER ANIMATION (data-count)
+    // =====================
+    const counters = document.querySelectorAll('[data-count]');
+
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            const target = parseInt(el.getAttribute('data-count'), 10);
+            const duration = 1200;
+            const start = performance.now();
+
+            function tick(now) {
+                const progress = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                el.firstChild.textContent = Math.round(target * eased);
+                el.setAttribute('data-count', target);
+                if (progress < 1) {
+                    requestAnimationFrame(tick);
+                } else {
+                    el.firstChild.textContent = target;
+                }
+            }
+
+            requestAnimationFrame(tick);
+            counterObserver.unobserve(el);
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(el => counterObserver.observe(el));
 
     // =====================
     // FORMULÁRIO DE CONTATO
