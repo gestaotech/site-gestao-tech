@@ -1,0 +1,203 @@
+/*
+ * Design tokens — Gestão Tech
+ *
+ * Cores extraídas do logo oficial (brand/logo.jpeg). Os códigos ainda não constam
+ * de um guia de marca aprovado: ajuste aqui, em um único lugar.
+ *
+ * Regras de uso:
+ * - Texto sobre branco/fundo claro: --color-ink, --color-muted, --color-brand,
+ *   --color-brand-orange-text (somente textos acentuados e curtos).
+ * - Cores decorativas (teal, laranja, âmbar): nunca carregam informação sozinhas
+ *   e não são usadas como cor de texto pequeno (contraste insuficiente).
+ */
+
+:root {
+  /* Marca */
+  --color-brand: #115c6b;
+  --color-brand-strong: #0c4a56;
+  --color-brand-teal: #3bb7a7;
+  --color-brand-orange: #e87c3b;
+  --color-brand-orange-text: #b4531b;
+  --color-brand-amber: #f5a623;
+  --color-on-brand: #ffffff;
+
+  /* Neutras */
+  --color-ink: #13232a;
+  --color-muted: #4a5b63;
+  --color-line: #d6e2e4;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f3f8f8;
+  --color-surface-deep: #0f2f37;
+
+  /* Estados */
+  --color-focus: #0c4a56;
+  --color-danger: #b42318;
+  --color-danger-soft: #fef3f2;
+
+  /* Tipografia */
+  --font-display: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
+  --font-body: var(--font-space-grotesk), "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), "Courier New", monospace;
+
+  /* Espaçamento (escala de 4px) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+
+  /* Layout */
+  --content-width: 1200px;
+  --header-height: 72px;
+  --gutter: 1.5rem;
+
+  /* Raios */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 2px rgb(15 23 42 / 0.06);
+  --shadow-md: 0 8px 24px rgb(15 23 42 / 0.08);
+  --shadow-lg: 0 18px 40px rgb(15 23 42 / 0.12);
+
+  /* Movimento */
+  --duration-fast: 150ms;
+  --duration-slow: 600ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + var(--space-4));
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-ink);
+  background: var(--color-surface);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+.container {
+  width: min(100% - 2 * var(--gutter), var(--content-width));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--space-24);
+  scroll-margin-top: var(--header-height);
+}
+
+.section--soft {
+  background: var(--color-surface-soft);
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-4);
+  top: -100px;
+  z-index: 200;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  background: var(--color-brand);
+  color: var(--color-on-brand);
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: var(--space-4);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --gutter: 1.25rem;
+    --header-height: 64px;
+  }
+
+  .section {
+    padding-block: var(--space-16);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
