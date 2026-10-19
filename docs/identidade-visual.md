@@ -64,7 +64,7 @@ Regras:
 
 ## 3. Ilustrações (`public/images/site/`)
 
-Cinco ilustrações vetoriais originais, criadas para este projeto com formas geométricas e a paleta da marca. Os arquivos-fonte SVG estão em `brand/illustrations/`.
+Quatro ilustrações vetoriais originais, criadas para este projeto com formas geométricas e a paleta da marca. Os arquivos-fonte SVG estão em `brand/illustrations/`.
 
 | Arquivo | Onde é usada | Conteúdo |
 | --- | --- | --- |
@@ -72,9 +72,10 @@ Cinco ilustrações vetoriais originais, criadas para este projeto com formas ge
 | `desenvolvimento-web.webp` (1280 × 800) | Serviço "Desenvolvimento Web" | Monitor com janela de navegador genérica |
 | `infraestrutura-integracao.webp` (1280 × 800) | Serviço "Gestão de TI" | Servidores em rack conectados a nós |
 | `gestao-automacao.webp` (1280 × 800) | Serviço "Automação de Processos" | Painel com gráficos abstratos e fluxo de etapas |
-| `gt-restaurantes.webp` (1280 × 800) | Produto GT Restaurantes | Mesa de restaurante com tablet genérico |
 
 Nenhuma ilustração exibe dados, números, textos legíveis, marcas de terceiros ou telas que se pareçam com produtos reais.
+
+O cartão do GT Restaurantes não tem imagem por decisão da Gestão Tech.
 
 **Limitação:** não foram produzidas fotografias. As ilustrações são vetoriais. Fotografias reais de equipe, escritório ou clientes exigem fotógrafo ou banco de imagens licenciado (ver pendências).
 
