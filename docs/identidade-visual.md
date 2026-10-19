@@ -34,7 +34,10 @@ O nome "Gestão Tech" foi convertido em curvas (contornos) com a fonte Archivo E
 - `src/app/icon.png` (512 × 512, transparente) — ícone do site.
 - `src/app/apple-icon.png` (180 × 180, fundo branco) — ícone de tela inicial no iOS.
 
-**Cabeçalho:** a logo horizontal clara foi removida do cabeçalho por decisão da Gestão Tech, para substituição por uma nova. Enquanto isso, o cabeçalho exibe o nome "Gestão Tech" em texto (`src/components/layout/Header.tsx`). Para reinserir a logo, adicione o arquivo em `public/images/brand/` e troque o texto do link `.brand` por um `next/image` com `unoptimized`, `width`, `height` e `alt` vazio.
+**Cabeçalho:** usa `logo-horizontal.svg`, enviada pela Gestão Tech (origem: `brand/logo-horizontal.svg`). Este arquivo **não foi gerado pelo gerador da marca** e tem pontos pendentes:
+- O nome está como texto vivo, com fonte Inter/Arial, que não está embutida. Sem essa fonte, a aparência muda entre dispositivos. Recomenda-se converter para curvas.
+- O símbolo usa azul e degradê (`#53B1FD` a `#175CD3`), fora da paleta proposta neste documento. Se a identidade azul for a oficial, a paleta do site precisa ser revista.
+- O arquivo se descreve como "conceitual". Confirmar se é a versão final.
 
 ### Regras de uso
 
