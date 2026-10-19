@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ButtonLink from "@/components/ui/Button";
 import styles from "./Hero.module.css";
 
@@ -30,25 +31,37 @@ export default function Hero() {
           </div>
         </div>
 
-        <aside className={styles.panel} aria-labelledby="focus-title">
-          <h2 id="focus-title" className={styles.panelTitle}>
-            Como podemos ajudar
-          </h2>
-          <ul className={styles.list}>
-            {focusAreas.map((area, index) => (
-              <li key={area.label}>
-                <a href={area.href} className={styles.item}>
-                  <span className={styles.index} aria-hidden="true">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span className={styles.itemText}>
-                    <strong>{area.label}</strong>
-                    <span>{area.note}</span>
-                  </span>
-                </a>
-              </li>
-            ))}
-          </ul>
+        <aside className={styles.aside}>
+          <Image
+            src="/images/site/banner-principal.webp"
+            alt="Ilustração de uma mesa de trabalho com notebook, planta e linhas arquitetônicas"
+            width={1600}
+            height={900}
+            priority
+            sizes="(max-width: 1024px) 100vw, 45vw"
+            className={styles.banner}
+          />
+
+          <div className={styles.panel} aria-labelledby="focus-title">
+            <h2 id="focus-title" className={styles.panelTitle}>
+              Como podemos ajudar
+            </h2>
+            <ul className={styles.list}>
+              {focusAreas.map((area, index) => (
+                <li key={area.label}>
+                  <a href={area.href} className={styles.item}>
+                    <span className={styles.index} aria-hidden="true">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className={styles.itemText}>
+                      <strong>{area.label}</strong>
+                      <span>{area.note}</span>
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </aside>
       </div>
     </section>

@@ -39,7 +39,7 @@ npm run typecheck && npm run lint && npm test && npm run build
 ## Estrutura
 
 ```
-brand/                       Fontes dos ativos de marca (não servidos)
+brand/                       Logo original, fontes das ilustrações e gerador da marca (não servido)
 public/images/               Logo horizontal usado no cabeçalho
 src/
   app/
@@ -75,6 +75,9 @@ Textos e dados ficam em `src/data/`. Para alterar o conteúdo, não é preciso m
 - **Serviços:** `src/data/services.ts`.
 
 ## Identidade visual
+
+Logo, ícones, ilustrações e licenças estão documentados em docs/identidade-visual.md. Os arquivos da marca estão em public/images/brand/ (SVG e PNG) e as ilustrações em public/images/site/ (WebP, com fontes em rand/illustrations/).
+
 
 As cores foram extraídas do logo oficial e centralizadas em `src/app/globals.css`:
 

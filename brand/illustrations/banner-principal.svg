@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="t d">
+  <title id="t">Ambiente de trabalho com notebook</title>
+  <desc id="d">Ilustração geométrica de uma mesa de trabalho com notebook, planta e linhas arquitetônicas.</desc>
+  <rect width="1600" height="900" fill="#0B2A3C"/>
+  <g stroke="#FFFFFF" stroke-opacity="0.05" stroke-width="2">
+    <path d="M0 150H1600M0 300H1600M0 450H1600M0 600H1600M0 750H1600"/>
+    <path d="M200 0V900M400 0V900M600 0V900M800 0V900M1000 0V900M1200 0V900M1400 0V900"/>
+  </g>
+  <circle cx="1210" cy="330" r="290" fill="#115C6B" fill-opacity="0.55"/>
+  <circle cx="1210" cy="330" r="190" fill="none" stroke="#3BB7A7" stroke-width="3" stroke-opacity="0.45"/>
+  <rect x="180" y="120" width="300" height="420" rx="6" fill="#0F3446"/>
+  <rect x="210" y="160" width="240" height="30" rx="4" fill="#16485C"/>
+  <rect x="210" y="220" width="170" height="14" rx="7" fill="#3BB7A7" fill-opacity="0.75"/>
+  <rect x="210" y="256" width="210" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.22"/>
+  <rect x="210" y="292" width="120" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.22"/>
+  <rect x="210" y="350" width="110" height="110" rx="8" fill="#115C6B"/>
+  <rect x="340" y="350" width="110" height="110" rx="8" fill="#3BB7A7" fill-opacity="0.35"/>
+  <rect x="210" y="480" width="240" height="20" rx="10" fill="#FFFFFF" fill-opacity="0.12"/>
+  <rect x="120" y="700" width="1360" height="22" rx="4" fill="#16485C"/>
+  <rect x="150" y="722" width="30" height="110" fill="#0F3446"/>
+  <rect x="1420" y="722" width="30" height="110" fill="#0F3446"/>
+  <rect x="880" y="360" width="520" height="330" rx="16" fill="#1B3F50"/>
+  <rect x="905" y="385" width="470" height="280" rx="8" fill="#0C2330"/>
+  <rect x="935" y="415" width="180" height="16" rx="8" fill="#3BB7A7"/>
+  <rect x="935" y="450" width="410" height="12" rx="6" fill="#FFFFFF" fill-opacity="0.18"/>
+  <rect x="935" y="480" width="350" height="12" rx="6" fill="#FFFFFF" fill-opacity="0.18"/>
+  <rect x="935" y="520" width="130" height="90" rx="8" fill="#115C6B"/>
+  <rect x="1085" y="520" width="130" height="90" rx="8" fill="#3BB7A7" fill-opacity="0.4"/>
+  <rect x="1235" y="520" width="110" height="90" rx="8" fill="#FFFFFF" fill-opacity="0.12"/>
+  <path d="M820 690H1460L1500 720H780Z" fill="#16485C"/>
+  <path d="M1140 690V720" stroke="#3BB7A7" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="1480" cy="600" r="12" fill="#E87C3B"/>
+  <circle cx="1500" cy="560" r="6" fill="#3BB7A7"/>
+  <rect x="520" y="650" width="90" height="72" rx="10" fill="#E87C3B" fill-opacity="0.9"/>
+  <path d="M480 650h170" stroke="#E87C3B" stroke-width="6" stroke-linecap="round" stroke-opacity="0.6"/>
+</svg>

@@ -26,6 +26,12 @@ export const solutions: readonly Solution[] = [
       href: "https://gest-o-de-restaurantes.vercel.app/",
       label: "Ver produto",
     },
+    image: {
+      src: "/images/site/gt-restaurantes.webp",
+      alt: "Ilustração de mesa de restaurante com um tablet exibindo blocos de interface genéricos",
+      width: 1280,
+      height: 800,
+    },
   },
 ];
 

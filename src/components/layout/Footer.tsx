@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { navItems, siteName, tagline } from "@/data/site";
 import styles from "./Footer.module.css";
 
@@ -8,9 +9,14 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.brand}>
-          <p className={styles.name}>
-            {siteName.split(" ")[0]} <span>{siteName.split(" ")[1]}</span>
-          </p>
+          <Image
+            src="/images/brand/logo-gestao-tech-dark.svg"
+            alt={siteName}
+            width={709}
+            height={100}
+            unoptimized
+            className={styles.logo}
+          />
           <p className={styles.tagline}>{tagline}</p>
         </div>
 
