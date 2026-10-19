@@ -30,9 +30,11 @@ O nome "Gestão Tech" foi convertido em curvas (contornos) com a fonte Archivo E
 | `logo-gestao-tech-icon.png` | Símbolo 512 × 512, fundo transparente |
 | `favicon.png` | 48 × 48, fundo transparente |
 
-Ícones de aplicação gerados a partir do símbolo:
-- `src/app/icon.png` (512 × 512, transparente) — ícone do site.
-- `src/app/apple-icon.png` (180 × 180, fundo branco) — ícone de tela inicial no iOS.
+Ícone de aplicação (enviado pela Gestão Tech, origem `brand/icone-app.svg`):
+- `src/app/icon.svg` — ícone do site (G azul sobre quadrado escuro arredondado).
+- `src/app/apple-icon.png` (180 × 180, fundo branco, gerado a partir do SVG) — ícone de tela inicial no iOS, que não aceita SVG nem fundo transparente.
+
+Pendência: o G do ícone usa `#175CD3`, o mesmo azul da logo horizontal enviada e diferente da paleta proposta neste documento (ver seção 8).
 
 **Cabeçalho:** usa `logo-horizontal.svg`, enviada pela Gestão Tech (origem: `brand/logo-horizontal.svg`). Este arquivo **não foi gerado pelo gerador da marca** e tem pontos pendentes:
 - O nome está como texto vivo, com fonte Inter/Arial, que não está embutida. Sem essa fonte, a aparência muda entre dispositivos. Recomenda-se converter para curvas.

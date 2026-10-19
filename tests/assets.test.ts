@@ -73,8 +73,9 @@ describe("recursos gráficos", () => {
   });
 
   it("gera os ícones de aplicação usados pelo Next.js", () => {
-    expect(existsSync(path.join(root, "src/app/icon.png"))).toBe(true);
+    expect(existsSync(path.join(root, "src/app/icon.svg"))).toBe(true);
     expect(existsSync(path.join(root, "src/app/apple-icon.png"))).toBe(true);
+    expect(existsSync(path.join(root, "src/app/icon.png"))).toBe(false);
   });
 
   it("mantém o texto das logos geradas em curvas, sem depender de fontes instaladas", () => {
