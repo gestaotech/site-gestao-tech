@@ -21,7 +21,6 @@ O nome "Gestão Tech" foi convertido em curvas (contornos) com a fonte Archivo E
 
 | Arquivo | Uso |
 | --- | --- |
-| `logo-gestao-tech.svg` | Horizontal, fundo claro (cabeçalho do site) |
 | `logo-gestao-tech-dark.svg` | Horizontal, fundo escuro (rodapé) |
 | `logo-gestao-tech-mono.svg` | Horizontal, uma cor (impressão, carimbos, fax) |
 | `logo-gestao-tech-vertical.svg` | Símbolo acima do nome, com assinatura, fundo claro |
@@ -34,6 +33,8 @@ O nome "Gestão Tech" foi convertido em curvas (contornos) com a fonte Archivo E
 Ícones de aplicação gerados a partir do símbolo:
 - `src/app/icon.png` (512 × 512, transparente) — ícone do site.
 - `src/app/apple-icon.png` (180 × 180, fundo branco) — ícone de tela inicial no iOS.
+
+**Cabeçalho:** a logo horizontal clara foi removida do cabeçalho por decisão da Gestão Tech, para substituição por uma nova. Enquanto isso, o cabeçalho exibe o nome "Gestão Tech" em texto (`src/components/layout/Header.tsx`). Para reinserir a logo, adicione o arquivo em `public/images/brand/` e troque o texto do link `.brand` por um `next/image` com `unoptimized`, `width`, `height` e `alt` vazio.
 
 ### Regras de uso
 

@@ -59,7 +59,6 @@ describe("recursos gráficos", () => {
 
   it("disponibiliza a logo em variações para fundo claro, escuro e monocromática", () => {
     for (const file of [
-      "logo-gestao-tech.svg",
       "logo-gestao-tech-dark.svg",
       "logo-gestao-tech-mono.svg",
       "logo-gestao-tech-vertical.svg",
@@ -86,8 +85,8 @@ describe("recursos gráficos", () => {
     }
   });
 
-  it("mantém a logo horizontal com o nome da empresa acessível", () => {
-    const svg = readFileSync(path.join(root, "public/images/brand/logo-gestao-tech.svg"), "utf8");
+  it("mantém a logo escura com o nome da empresa acessível", () => {
+    const svg = readFileSync(path.join(root, "public/images/brand/logo-gestao-tech-dark.svg"), "utf8");
     expect(svg).toContain("<title>Gestão Tech</title>");
   });
 });

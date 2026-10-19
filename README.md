@@ -40,7 +40,7 @@ npm run typecheck && npm run lint && npm test && npm run build
 
 ```
 brand/                       Logo original, fontes das ilustrações e gerador da marca (não servido)
-public/images/               Logo horizontal usado no cabeçalho
+public/images/               Logos (brand/) e ilustrações (site/)
 src/
   app/
     layout.tsx               Layout raiz, idioma pt-BR, fontes e metadados

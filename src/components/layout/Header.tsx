@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import ButtonLink from "@/components/ui/Button";
 import { navItems, siteName } from "@/data/site";
@@ -74,16 +73,8 @@ export default function Header() {
   return (
     <header className={headerClass}>
       <div className={styles.inner}>
-        <a href="#home" className={styles.brand} aria-label={`${siteName} — início`}>
-          <Image
-            src="/images/brand/logo-gestao-tech.svg"
-            alt=""
-            width={709}
-            height={100}
-            priority
-            unoptimized
-            className={styles.logo}
-          />
+        <a href="#home" className={styles.brand}>
+          {siteName}
         </a>
 
         <nav id="site-nav" className={navClass} aria-label="Principal">
