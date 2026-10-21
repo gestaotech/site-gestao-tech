@@ -83,6 +83,16 @@ describe("página inicial", () => {
     }
   });
 
+  it("todas as imagens renderizadas possuem atributo alt", () => {
+    render(<HomePage />);
+    const images = Array.from(document.querySelectorAll("img"));
+
+    expect(images.length).toBeGreaterThan(0);
+    for (const image of images) {
+      expect(image).toHaveAttribute("alt");
+    }
+  });
+
   it("mantém os campos do formulário associados a rótulos", () => {
     render(<HomePage />);
     for (const label of ["Nome", "Telefone com DDD", "Serviço de interesse", "Mensagem"]) {

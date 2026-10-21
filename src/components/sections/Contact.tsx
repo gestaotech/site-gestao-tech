@@ -1,3 +1,4 @@
+import { Clock, MessageCircle } from "lucide-react";
 import ContactForm from "@/components/sections/ContactForm";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { contact } from "@/data/site";
@@ -21,7 +22,10 @@ export default function Contact() {
 
           <aside className={styles.info} aria-label="Informações de contato">
             <div className={styles.item}>
-              <p className={styles.label}>WhatsApp</p>
+              <p className={styles.label}>
+                <MessageCircle size={16} strokeWidth={1.75} aria-hidden="true" />
+                WhatsApp
+              </p>
               <a
                 href={`https://wa.me/${contact.whatsappNumber}`}
                 target="_blank"
@@ -34,7 +38,10 @@ export default function Contact() {
             </div>
 
             <div className={styles.item}>
-              <p className={styles.label}>Horário de atendimento</p>
+              <p className={styles.label}>
+                <Clock size={16} strokeWidth={1.75} aria-hidden="true" />
+                Horário de atendimento
+              </p>
               <p className={styles.valueText}>{contact.hoursLabel}</p>
               <p className={styles.hint}>{contact.hoursTime}</p>
             </div>

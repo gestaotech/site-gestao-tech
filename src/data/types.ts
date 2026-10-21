@@ -3,6 +3,15 @@ export type NavItem = {
   href: `#${string}`;
 };
 
+export type ImageAsset = {
+  src: `/${string}`;
+  alt: string;
+  width: number;
+  height: number;
+};
+
+export type ServiceIcon = "code" | "server" | "workflow";
+
 export type Service = {
   id: string;
   title: string;
@@ -10,6 +19,8 @@ export type Service = {
   benefit: string;
   items: readonly string[];
   cta: string;
+  icon: ServiceIcon;
+  image: ImageAsset;
 };
 
 export type SolutionPrice = {
@@ -33,4 +44,5 @@ export type Solution = {
   published: boolean;
   price?: SolutionPrice;
   link?: SolutionLink;
+  image?: ImageAsset;
 };

@@ -76,11 +76,12 @@ export default function Header() {
       <div className={styles.inner}>
         <a href="#home" className={styles.brand} aria-label={`${siteName} — início`}>
           <Image
-            src="/images/logo-gestao-tech.png"
+            src="/images/brand/logo-horizontal.svg"
             alt=""
-            width={894}
-            height={321}
+            width={680}
+            height={140}
             priority
+            unoptimized
             className={styles.logo}
           />
         </a>

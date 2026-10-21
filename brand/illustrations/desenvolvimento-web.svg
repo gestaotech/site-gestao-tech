@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" role="img" aria-labelledby="t d">
+  <title id="t">Desenvolvimento de sistemas web</title>
+  <desc id="d">Ilustração geométrica de monitor exibindo uma janela de navegador genérica com blocos de conteúdo e linhas abstratas.</desc>
+  <rect width="1280" height="800" fill="#EEF5F5"/>
+  <circle cx="1100" cy="150" r="160" fill="#3BB7A7" fill-opacity="0.18"/>
+  <rect x="210" y="110" width="860" height="500" rx="22" fill="#0F2F37"/>
+  <rect x="236" y="136" width="808" height="448" rx="10" fill="#FFFFFF"/>
+  <rect x="236" y="136" width="808" height="44" rx="10" fill="#E9F1F2"/>
+  <rect x="236" y="170" width="808" height="10" fill="#E9F1F2"/>
+  <circle cx="264" cy="158" r="7" fill="#E87C3B"/>
+  <circle cx="288" cy="158" r="7" fill="#3BB7A7"/>
+  <circle cx="312" cy="158" r="7" fill="#C7D6D9"/>
+  <rect x="360" y="148" width="520" height="20" rx="10" fill="#FFFFFF"/>
+  <rect x="268" y="206" width="250" height="356" rx="8" fill="#F3F8F8"/>
+  <rect x="290" y="232" width="160" height="14" rx="7" fill="#115C6B"/>
+  <rect x="290" y="268" width="200" height="10" rx="5" fill="#8FA7AD"/>
+  <rect x="290" y="292" width="170" height="10" rx="5" fill="#8FA7AD"/>
+  <rect x="290" y="316" width="210" height="10" rx="5" fill="#3BB7A7"/>
+  <rect x="290" y="340" width="130" height="10" rx="5" fill="#8FA7AD"/>
+  <rect x="290" y="364" width="190" height="10" rx="5" fill="#E87C3B" fill-opacity="0.8"/>
+  <rect x="290" y="388" width="150" height="10" rx="5" fill="#8FA7AD"/>
+  <rect x="290" y="412" width="200" height="10" rx="5" fill="#8FA7AD"/>
+  <rect x="290" y="450" width="200" height="84" rx="8" fill="#115C6B"/>
+  <rect x="544" y="206" width="480" height="150" rx="10" fill="#115C6B"/>
+  <rect x="572" y="234" width="220" height="16" rx="8" fill="#FFFFFF" fill-opacity="0.9"/>
+  <rect x="572" y="270" width="330" height="10" rx="5" fill="#FFFFFF" fill-opacity="0.45"/>
+  <rect x="572" y="292" width="280" height="10" rx="5" fill="#FFFFFF" fill-opacity="0.45"/>
+  <rect x="544" y="380" width="228" height="182" rx="10" fill="#E3EFEF"/>
+  <rect x="796" y="380" width="228" height="182" rx="10" fill="#3BB7A7" fill-opacity="0.3"/>
+  <rect x="572" y="410" width="172" height="12" rx="6" fill="#115C6B"/>
+  <rect x="572" y="436" width="140" height="10" rx="5" fill="#8FA7AD"/>
+  <rect x="572" y="520" width="172" height="26" rx="8" fill="#E87C3B"/>
+  <rect x="824" y="410" width="172" height="12" rx="6" fill="#115C6B"/>
+  <rect x="824" y="436" width="140" height="10" rx="5" fill="#8FA7AD"/>
+  <path d="M500 610H780L810 650H470Z" fill="#0F2F37"/>
+  <rect x="560" y="650" width="160" height="26" rx="4" fill="#0F2F37"/>
+  <rect x="980" y="560" width="110" height="130" rx="10" fill="#FFFFFF" stroke="#115C6B" stroke-width="6"/>
+  <path d="M1090 600H1120A24 24 0 0 1 1120 648H1090" fill="none" stroke="#115C6B" stroke-width="6"/>
+  <path d="M1000 540c0-24 18-30 18-50" fill="none" stroke="#3BB7A7" stroke-width="5" stroke-linecap="round" stroke-opacity="0.7"/>
+  <path d="M1030 540c0-24 18-30 18-50" fill="none" stroke="#3BB7A7" stroke-width="5" stroke-linecap="round" stroke-opacity="0.5"/>
+</svg>

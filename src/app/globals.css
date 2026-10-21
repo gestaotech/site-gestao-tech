@@ -1,14 +1,15 @@
 /*
  * Design tokens — Gestão Tech
  *
- * Cores extraídas do logo oficial (brand/logo.jpeg). Os códigos ainda não constam
- * de um guia de marca aprovado: ajuste aqui, em um único lugar.
+ * Paleta de referência da identidade visual (proposta provisória, ainda não
+ * aprovada como manual de marca). Ajuste aqui, em um único lugar.
  *
  * Regras de uso:
- * - Texto sobre branco/fundo claro: --color-ink, --color-muted, --color-brand,
- *   --color-brand-orange-text (somente textos acentuados e curtos).
- * - Cores decorativas (teal, laranja, âmbar): nunca carregam informação sozinhas
- *   e não são usadas como cor de texto pequeno (contraste insuficiente).
+ * - Texto sobre fundo claro: --color-ink, --color-muted, --color-brand,
+ *   --color-brand-orange-text (somente destaques curtos).
+ * - Texto sobre fundo escuro: --color-on-dark, --color-on-dark-muted.
+ * - Verde-água (--color-brand-teal) e laranja são decorativos: nunca carregam
+ *   informação sozinhos nem são usados como cor de texto pequeno.
  */
 
 :root {
@@ -24,20 +25,27 @@
   /* Neutras */
   --color-ink: #13232a;
   --color-muted: #4a5b63;
-  --color-line: #d6e2e4;
+  --color-border: #d9e5e7;
+  --color-placeholder: #5f7379;
+  --color-field-border: #5f7a80;
   --color-surface: #ffffff;
   --color-surface-soft: #f3f8f8;
   --color-surface-deep: #0f2f37;
+
+  /* Fundos escuros */
+  --color-on-dark: #ffffff;
+  --color-on-dark-muted: #c9dde0;
 
   /* Estados */
   --color-focus: #0c4a56;
   --color-danger: #b42318;
   --color-danger-soft: #fef3f2;
+  --color-success: #05603a;
+  --color-success-soft: #ecfdf3;
 
-  /* Tipografia */
-  --font-display: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
-  --font-body: var(--font-space-grotesk), "Helvetica Neue", Arial, sans-serif;
-  --font-mono: var(--font-jetbrains-mono), "Courier New", monospace;
+  /* Tipografia — proposta provisória: Manrope (títulos) e Inter (texto) */
+  --font-display: var(--font-manrope), "Helvetica Neue", Arial, sans-serif;
+  --font-body: var(--font-inter), "Helvetica Neue", Arial, sans-serif;
 
   /* Espaçamento (escala de 4px) */
   --space-1: 0.25rem;

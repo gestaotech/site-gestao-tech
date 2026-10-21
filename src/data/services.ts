@@ -14,6 +14,13 @@ export const services: readonly Service[] = [
       "APIs e integrações",
     ],
     cta: "Falar sobre desenvolvimento",
+    icon: "code",
+    image: {
+      src: "/images/site/desenvolvimento-web.webp",
+      alt: "Ilustração de um monitor com uma janela de navegador exibindo blocos de conteúdo",
+      width: 1280,
+      height: 800,
+    },
   },
   {
     id: "gestao-de-ti",
@@ -23,6 +30,13 @@ export const services: readonly Service[] = [
     benefit: "Mais estabilidade e organização para a área de tecnologia.",
     items: [],
     cta: "Falar sobre gestão de TI",
+    icon: "server",
+    image: {
+      src: "/images/site/infraestrutura-integracao.webp",
+      alt: "Ilustração de servidores em rack conectados a nós de integração",
+      width: 1280,
+      height: 800,
+    },
   },
   {
     id: "automacao-de-processos",
@@ -36,5 +50,12 @@ export const services: readonly Service[] = [
       "Dashboards e relatórios",
     ],
     cta: "Falar sobre automação",
+    icon: "workflow",
+    image: {
+      src: "/images/site/gestao-automacao.webp",
+      alt: "Ilustração de painel com gráficos abstratos e um fluxo de etapas automatizadas",
+      width: 1280,
+      height: 800,
+    },
   },
 ];
