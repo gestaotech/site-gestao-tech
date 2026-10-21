@@ -10,10 +10,10 @@ export default function Footer() {
       <div className={styles.inner}>
         <div className={styles.brand}>
           <Image
-            src="/images/brand/logo-gestao-tech-dark.svg"
+            src="/images/brand/logo-horizontal.svg"
             alt={siteName}
-            width={709}
-            height={100}
+            width={680}
+            height={140}
             unoptimized
             className={styles.logo}
           />
