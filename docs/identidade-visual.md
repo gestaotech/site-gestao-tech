@@ -47,7 +47,7 @@ Pendência: o G do ícone usa `#175CD3`, o mesmo azul da logo horizontal enviada
 - Altura mínima recomendada: 28 px na tela; 12 mm na impressão.
 - Não distorcer, girar, aplicar sombra ou contorno.
 - Em fundos com fotos ou cores intermediárias, usar a versão mono ou a versão escura sobre área sólida.
-- A versão original em JPEG (`brand/logo.jpeg`) é mantida como referência histórica e não é mais usada no site.
+- A versão original em JPEG (`brand/logo.jpeg`) foi removida do repositório por decisão da Gestão Tech. Continua disponível no histórico do Git.
 
 ## 2. Paleta
 

@@ -37,7 +37,7 @@
 
 **Itens que o prompt pedia e que não foram implementados:**
 - **Sitemap e URL canônica:** dependem do domínio definitivo.
-- **Imagem de compartilhamento (Open Graph):** sem domínio, o Next usaria `localhost:3000` nas meta tags de produção. A imagem está em `brand/og-image-1200x630.png` para ativação posterior.
+- **Imagem de compartilhamento (Open Graph):** sem domínio, o Next usaria `localhost:3000` nas meta tags de produção. A imagem `brand/og-image-1200x630.png` foi removida do repositório por decisão da Gestão Tech; continua disponível no histórico do Git.
 
 ## 3. Verificações executadas (resultados reais)
 
