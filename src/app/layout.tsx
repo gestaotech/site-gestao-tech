@@ -1,23 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import { Inter, Manrope } from "next/font/google";
 import { siteDescription, siteName, tagline } from "@/data/site";
 import "./globals.css";
 
-const archivo = Archivo({
+const manrope = Manrope({
   subsets: ["latin"],
-  variable: "--font-archivo",
+  variable: "--font-manrope",
   display: "swap",
 });
 
-const spaceGrotesk = Space_Grotesk({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
-  display: "swap",
-});
-
-const jetBrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains-mono",
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -56,7 +50,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${archivo.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable}`}
+      className={`${manrope.variable} ${inter.variable}`}
     >
       <body>{children}</body>
     </html>

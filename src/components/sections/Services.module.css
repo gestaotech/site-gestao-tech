@@ -18,7 +18,7 @@
   flex-direction: column;
   flex: 1;
   overflow: hidden;
-  border: 1px solid var(--color-line);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   background: var(--color-surface);
   box-shadow: var(--shadow-sm);
@@ -37,7 +37,7 @@
   height: auto;
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  border-bottom: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .body {
@@ -66,8 +66,8 @@
 }
 
 .number {
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -77,7 +77,7 @@
 .title {
   font-family: var(--font-display);
   font-size: 1.375rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.2;
   color: var(--color-ink);
 }
@@ -95,7 +95,7 @@
 .item {
   position: relative;
   padding-left: var(--space-5);
-  font-size: 0.9375rem;
+  font-size: 1rem;
   color: var(--color-ink);
 }
 
@@ -113,8 +113,8 @@
 .benefit {
   margin-top: auto;
   padding-top: var(--space-4);
-  border-top: 1px solid var(--color-line);
-  font-size: 0.9375rem;
+  border-top: 1px solid var(--color-border);
+  font-size: 1rem;
   color: var(--color-muted);
 }
 

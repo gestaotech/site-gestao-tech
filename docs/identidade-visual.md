@@ -60,7 +60,15 @@ Pendência: o G do ícone usa `#175CD3`, o mesmo azul da logo horizontal enviada
 | `--color-brand-orange-text` | `#B4531B` | Textos acentuados curtos | 5,01 : 1 |
 | `--color-ink` | `#13232A` | Texto principal | 16,13 : 1 |
 | `--color-muted` | `#4A5B63` | Texto secundário | 7,08 : 1 |
-| `--color-surface-deep` | `#0F2F37` | Fundos escuros | — |
+| `--color-surface-deep` | `#0F2F37` | Seções e rodapé escuros | — |
+| `--color-surface-soft` | `#F3F8F8` | Fundos alternativos | — |
+| `--color-border` | `#D9E5E7` | Bordas e divisores decorativos | 1,29 : 1 (decorativo, não é texto) |
+| `--color-placeholder` | `#5F7379` | Texto de dica nos campos | 4,98 : 1 |
+| `--color-on-dark` / `--color-on-dark-muted` | `#FFFFFF` / `#C9DDE0` | Textos sobre fundo escuro | 10,06 : 1 (muted, sobre `#0F2F37`) |
+| `--color-success` / `--color-success-soft` | `#05603A` / `#ECFDF3` | Mensagem de envio concluído | 7,26 : 1 |
+| `--color-danger` | `#B42318` | Mensagens de erro | 6,57 : 1 |
+
+Status da paleta: proposta provisória, ainda não aprovada como manual de marca. Os valores de referência não foram alterados. Os tokens de campo, estado e fundo escuro foram acrescentados para acessibilidade.
 
 Regras:
 - Textos pequenos nunca usam teal ou laranja; esses tons são decorativos.
@@ -95,20 +103,29 @@ Biblioteca: **lucide-react** (licença ISC, permite uso comercial). Traço 1,75 
 
 ## 5. Tipografia
 
-| Família | Uso | Licença |
-| --- | --- | --- |
-| Archivo (800 e 900) | Títulos e nome da marca | SIL Open Font License 1.1 |
-| Space Grotesk | Texto corrido e interface | SIL Open Font License 1.1 |
-| JetBrains Mono | Rótulos e etiquetas | SIL Open Font License 1.1 |
+Proposta provisória, ainda não aprovada como fonte oficial da marca.
 
-As fontes são carregadas pelo `next/font/google`, que as hospeda junto com o site no momento do build (nenhuma requisição ao Google pelo navegador do visitante).
+| Família | Uso | Pesos | Licença |
+| --- | --- | --- | --- |
+| Manrope | Títulos e chamadas principais | 600, 700 | SIL Open Font License 1.1 |
+| Inter | Parágrafos, menus, botões, formulários e informações auxiliares | 400, 500, 600 | SIL Open Font License 1.1 |
+
+- Carregamento: `src/app/layout.tsx`, com `next/font/google`. As fontes são hospedadas junto com o site no momento do build (nenhuma requisição ao Google pelo navegador do visitante).
+- Tokens: `--font-display` (Manrope) e `--font-body` (Inter), em `src/app/globals.css`.
+- Archivo e Space Grotesk são usadas somente pelo gerador para desenhar as logos em curvas. O site não as carrega.
+
+Escala:
+- Texto auxiliar: 0,875 rem. Texto padrão: 1 rem. Destaque: 1,125 a 1,25 rem.
+- Títulos de seção: clamp(1,75 rem, 3,5vw, 2,5 rem). Título principal: clamp(2,25 rem, 5vw, 3,75 rem).
+- Pesos: título principal 700; títulos de seção 600 ou 700; títulos de cartões 600; parágrafos 400; botões e navegação 500 ou 600.
 
 ## 6. Recursos de terceiros
 
 | Recurso | Origem | Licença | Observação |
 | --- | --- | --- | --- |
 | lucide-react | npm | ISC | Ícones de linha |
-| Archivo, Space Grotesk, JetBrains Mono | Google Fonts | OFL 1.1 | Fontes |
+| Manrope, Inter | Google Fonts | OFL 1.1 | Fontes do site (proposta provisória) |
+| Archivo, Space Grotesk | Google Fonts | OFL 1.1 | Somente no gerador da logo (`brand/tools/`) |
 | opentype.js | npm | MIT | Somente no gerador da logo (`brand/tools/`) |
 | sharp | npm | Apache-2.0 | Somente no gerador da logo (conversão de imagens) |
 

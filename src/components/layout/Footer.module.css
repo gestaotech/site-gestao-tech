@@ -1,6 +1,6 @@
 .footer {
   background: var(--color-surface-deep);
-  color: #ffffff;
+  color: var(--color-on-dark);
   padding-block: var(--space-12);
 }
 
@@ -24,8 +24,8 @@
 }
 
 .tagline {
-  color: #c9dde0;
-  font-size: 0.9375rem;
+  color: var(--color-on-dark-muted);
+  font-size: 1rem;
 }
 
 .links {
@@ -38,12 +38,12 @@
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  color: #e6f0f1;
-  font-size: 0.9375rem;
+  color: var(--color-on-dark-muted);
+  font-size: 1rem;
 }
 
 .link:hover {
-  color: #ffffff;
+  color: var(--color-on-dark);
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -52,8 +52,8 @@
   grid-column: 1 / -1;
   padding-top: var(--space-6);
   border-top: 1px solid rgb(255 255 255 / 0.14);
-  font-size: 0.8125rem;
-  color: #b7cdd1;
+  font-size: 0.875rem;
+  color: var(--color-on-dark-muted);
 }
 
 @media (max-width: 768px) {

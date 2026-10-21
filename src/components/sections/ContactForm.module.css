@@ -16,7 +16,7 @@
 }
 
 .label {
-  font-size: 0.9375rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--color-ink);
 }
@@ -25,7 +25,7 @@
   width: 100%;
   min-height: 48px;
   padding: var(--space-3) var(--space-4);
-  border: 1.5px solid #5f7a80;
+  border: 1.5px solid var(--color-field-border);
   border-radius: var(--radius-md);
   background: var(--color-surface);
   font: inherit;
@@ -37,7 +37,7 @@
 }
 
 .input::placeholder {
-  color: #5f7379;
+  color: var(--color-placeholder);
 }
 
 .input:hover {
@@ -86,8 +86,8 @@ textarea.input {
 .success {
   padding: var(--space-4);
   border-radius: var(--radius-sm);
-  background: #ecfdf3;
-  color: #05603a;
+  background: var(--color-success-soft);
+  color: var(--color-success);
   font-weight: 600;
 }
 
