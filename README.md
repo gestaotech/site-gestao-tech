@@ -1,17 +1,49 @@
 # Gestão Tech — site institucional
 
-Site institucional da Gestão Tech, migrado de HTML/CSS/JS para **Next.js 16 (App Router), React 19 e TypeScript** (modo estrito).
+Site institucional da Gestão Tech. 
+
+- **Versão estática (atual nesta branch):** HTML5, CSS3 e JavaScript puro (Vanilla JS). Arquivos em `index.html`, `css/style.css`, `js/script.js`. Não requer build ou Node.js para abrir.
+- **Versão Next.js (preservada):** migração para **Next.js 16 (App Router), React 19 e TypeScript** (modo estrito), mantida em `feat/migracao-nextjs` e no histórico do Git.
 
 > Tecnologia que gera resultados.
 
-## Requisitos
+## Versão estática (HTML/CSS/JS)
 
-- Node.js 20.9 ou superior (testado com Node 24)
-- npm 10 ou superior (testado com npm 11)
+**Como abrir:**
+- Abrir `index.html` diretamente no navegador (funciona na maioria dos casos).
+- Ou servir via servidor HTTP local (recomendado para alguns navegadores): `npx serve .` ou `python -m http.server 8000` e acessar `http://localhost:8000`.
 
-O projeto usa **npm**, com `package-lock.json` versionado.
+**Arquivos:**
+- `index.html` — página única com todas as seções
+- `css/style.css` — estilos e tokens
+- `js/script.js` — menu, formulário e integração com WhatsApp
+- `images/` — logotipos e ilustrações
+- `docs/estrutura-do-site.md` — estrutura técnica
 
-## Instalação e execução
+**Alterar conteúdo:**
+- Textos principais: editar diretamente em `index.html`.
+- Cores/tokens: `css/style.css` (`:root`).
+- Contato/WhatsApp: número `5561998361296` em `index.html` e `js/script.js`.
+- Soluções SaaS: seção "Soluções" em `index.html` (seguir padrão existente). Não exibir preços não confirmados.
+
+**Formulário de contato:**
+1. Valida nome (>=2), telefone com DDD (10 ou 11 dígitos), mensagem (>=10).
+2. Monta mensagem organizada e codifica para URL.
+3. Abre `https://wa.me/5561998361296` em nova aba com proteção `noopener/noreferrer`.
+4. Se o pop-up for bloqueado, exibe link alternativo.
+5. Os dados não são armazenados neste site.
+
+**Limitações da versão estática:**
+- Sem sitemap/Open Graph canônico (domínio definitivo não definido).
+- Sem envio para servidor/CRM (apenas redirecionamento ao WhatsApp).
+
+## Versão Next.js (preservada)
+
+**Requisitos**
+- Node.js 20.9 ou superior
+- npm 10 ou superior
+
+**Instalação e execução**
 
 ```bash
 npm install
