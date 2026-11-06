@@ -3,15 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Gestão Tech | Tecnologia que gera resultados.</title>
+    <title>Gestão Tech | Tecnologia para gestão e resultados</title>
     <meta
       name="description"
-      content="A Gestão Tech desenvolve sites, sistemas web e soluções de gestão que ajudam empresas a organizar processos, automatizar tarefas e crescer com tecnologia."
+      content="A Gestão Tech desenvolve soluções tecnológicas que simplificam processos, organizam operações e ajudam empresas a alcançar melhores resultados."
     />
-    <meta property="og:title" content="Gestão Tech | Tecnologia que gera resultados." />
+    <meta name="theme-color" content="#115C6B" />
+    <meta property="og:title" content="Gestão Tech | Tecnologia para gestão e resultados" />
     <meta
       property="og:description"
-      content="A Gestão Tech desenvolve sites, sistemas web e soluções de gestão que ajudam empresas a organizar processos, automatizar tarefas e crescer com tecnologia."
+      content="Soluções tecnológicas para simplificar processos, organizar operações e apoiar a gestão do seu negócio."
     />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
@@ -20,336 +21,292 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
-    <header class="header" id="home">
-      <div class="header__inner container">
-        <a class="header__brand" href="#home" aria-label="Gestão Tech — início">
+
+    <header class="site-header" id="inicio">
+      <div class="container header-inner">
+        <a class="brand" href="#inicio" aria-label="Gestão Tech — início">
           <img
             src="./images/brand/logo-gestao-tech.svg"
             alt="Gestão Tech"
-            class="header__logo"
             width="680"
             height="140"
+            decoding="async"
           />
         </a>
+
         <button
-          class="header__toggle"
+          class="nav-toggle"
           type="button"
           aria-expanded="false"
           aria-controls="site-nav"
           aria-label="Abrir menu"
         >
-          <span class="header__bar" aria-hidden="true"></span>
-          <span class="header__bar" aria-hidden="true"></span>
-          <span class="header__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
         </button>
-        <nav class="header__nav" id="site-nav" aria-label="Principal">
-          <ul class="header__list">
-            <li><a class="header__link" href="#home">Início</a></li>
-            <li><a class="header__link" href="#sobre">Sobre</a></li>
-            <li><a class="header__link" href="#servicos">Serviços</a></li>
-            <li><a class="header__link" href="#solucoes">Soluções</a></li>
-            <li><a class="header__link" href="#contato">Contato</a></li>
+
+        <nav class="site-nav" id="site-nav" aria-label="Principal">
+          <ul class="site-nav__list">
+            <li><a class="site-nav__link" href="#inicio" data-section="inicio">Início</a></li>
+            <li><a class="site-nav__link" href="#sobre" data-section="sobre">Sobre nós</a></li>
+            <li><a class="site-nav__link" href="#servicos" data-section="servicos">Serviços</a></li>
+            <li><a class="site-nav__link" href="#solucoes" data-section="solucoes">Soluções</a></li>
+            <li><a class="site-nav__link" href="#contato" data-section="contato">Contato</a></li>
           </ul>
-          <a class="button button--primary header__cta-mobile" href="#contato">Fale conosco</a>
+          <a class="btn btn--primary nav-cta nav-cta--mobile" href="#contato">Fale com a empresa</a>
         </nav>
-        <a class="button button--primary header__cta-desktop" href="#contato">Fale conosco</a>
+
+        <a class="btn btn--primary nav-cta nav-cta--desktop" href="#contato">Fale com a empresa</a>
       </div>
     </header>
 
     <main id="conteudo-principal">
-      <section class="hero">
+      <section class="hero section-anchor" aria-labelledby="hero-title">
+        <div class="hero__bg" aria-hidden="true">
+          <span class="hero__shape hero__shape--grid"></span>
+          <span class="hero__shape hero__shape--ring"></span>
+          <span class="hero__shape hero__shape--line"></span>
+          <span class="hero__shape hero__shape--dot"></span>
+        </div>
         <div class="container hero__inner">
-          <div class="hero__content">
-            <span class="hero__badge">Tecnologia que gera resultados.</span>
-            <h1 class="hero__title">
-              Tecnologia que transforma <span class="hero__highlight">processos</span> em
-              <span class="hero__highlight">resultados</span>.
-            </h1>
-            <p class="hero__subtitle">
-              Desenvolvemos sites, sistemas web e soluções de gestão sob medida para ajudar sua
-              empresa a trabalhar melhor, automatizar processos e crescer com tecnologia.
+          <div class="hero__content reveal">
+            <p class="eyebrow eyebrow--on-dark">Gestão Tech</p>
+            <h1 class="hero__title" id="hero-title">Tecnologia que transforma a gestão da sua empresa.</h1>
+            <p class="hero__lead">
+              Desenvolvemos soluções tecnológicas que simplificam processos, organizam operações e ajudam
+              empresas a alcançar melhores resultados.
             </p>
             <div class="hero__actions">
-              <a class="button button--primary" href="#solucoes">Conheça nossas soluções</a>
-              <a class="button button--secondary" href="#contato">Fale com a Gestão Tech</a>
+              <a class="btn btn--accent" href="#solucoes">Conheça nossas soluções</a>
+              <a class="btn btn--ghost" href="#contato">Fale com um especialista</a>
             </div>
           </div>
-          <div class="hero__aside">
-            <img
-              class="hero__banner"
-              src="./images/site/banner-principal.webp"
-              alt="Ilustração de uma mesa de trabalho com notebook, planta e linhas arquitetônicas"
-              width="1600"
-              height="900"
-              loading="lazy"
-            />
+          <div class="hero__visual reveal" aria-hidden="true">
+            <div class="hero-panel">
+              <div class="hero-panel__bar"></div>
+              <div class="hero-panel__row"><span></span><span></span><span></span></div>
+              <div class="hero-panel__row hero-panel__row--wide"><span></span><span></span></div>
+              <div class="hero-panel__metric">
+                <span class="hero-panel__dot"></span>
+                <span class="hero-panel__metric-line"></span>
+              </div>
+              <div class="hero-panel__metric">
+                <span class="hero-panel__dot hero-panel__dot--teal"></span>
+                <span class="hero-panel__metric-line hero-panel__metric-line--short"></span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section" id="sobre">
+      <section class="section section-anchor" id="sobre" aria-labelledby="sobre-title">
         <div class="container">
-          <header class="section-header">
-            <span class="section-header__eyebrow">Sobre</span>
-            <h2 class="section-header__title">Sobre a Gestão Tech</h2>
-            <p class="section-header__subtitle">
-              Soluções tecnológicas alinhadas às necessidades de cada cliente.
-            </p>
+          <header class="section-head reveal">
+            <p class="eyebrow">Sobre nós</p>
+            <h2 class="section-title" id="sobre-title">Tecnologia com propósito. Gestão com resultados.</h2>
           </header>
-          <div class="about">
-            <div class="about__text">
+          <div class="about-grid">
+            <div class="about-text reveal">
               <p>
-                A Gestão Tech nasceu com o propósito de transformar a maneira como as empresas
-                utilizam a tecnologia. Oferecemos soluções que vão do desenvolvimento de software
-                à gestão da infraestrutura tecnológica.
+                A Gestão Tech desenvolve soluções tecnológicas para melhorar a gestão e os processos
+                empresariais, com foco nas necessidades reais de cada organização.
               </p>
               <p>
-                Trabalhamos com foco em entregar soluções úteis, sustentáveis e alinhadas às
-                necessidades de cada cliente.
+                Atuamos com compromisso com os clientes, comunicação transparente e desenvolvimento
+                orientado à eficiência operacional. Nosso trabalho busca soluções práticas, sustentáveis
+                e alinhadas à rotina do negócio.
               </p>
             </div>
-            <div class="about__grid">
-              <article class="card card--about">
-                <h3 class="card__title">Missão</h3>
-                <p class="card__text">
-                  Entregar soluções tecnológicas que geram valor real e sustentável para nossos
-                  clientes.
-                </p>
-              </article>
-              <article class="card card--about">
-                <h3 class="card__title">Visão</h3>
-                <p class="card__text">
-                  Ser referência em gestão de TI e desenvolvimento de software no Brasil.
-                </p>
-              </article>
-              <article class="card card--about">
-                <h3 class="card__title">Valores</h3>
-                <p class="card__text">
-                  Inovação, transparência, excelência e compromisso com o sucesso do cliente.
-                </p>
-              </article>
-            </div>
+            <ul class="about-pillars reveal" aria-label="Compromissos da Gestão Tech">
+              <li class="pillar">
+                <span class="pillar__icon" aria-hidden="true"></span>
+                <span>Compromisso com as necessidades dos clientes</span>
+              </li>
+              <li class="pillar">
+                <span class="pillar__icon" aria-hidden="true"></span>
+                <span>Tecnologia aplicada à eficiência e à organização</span>
+              </li>
+              <li class="pillar">
+                <span class="pillar__icon" aria-hidden="true"></span>
+                <span>Soluções práticas, sustentáveis e transparentes</span>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
 
-      <section class="section section--soft" id="servicos">
+      <section class="section section--alt section-anchor" id="servicos" aria-labelledby="servicos-title">
         <div class="container">
-          <header class="section-header">
-            <span class="section-header__eyebrow">Serviços</span>
-            <h2 class="section-header__title">Nossos serviços</h2>
-            <p class="section-header__subtitle">
-              Soluções práticas para desenvolver, organizar e automatizar sua empresa.
-            </p>
+          <header class="section-head reveal">
+            <p class="eyebrow">Serviços</p>
+            <h2 class="section-title" id="servicos-title">Tecnologia aplicada às necessidades do seu negócio.</h2>
           </header>
-          <div class="cards-grid">
-            <article class="card card--service">
-              <img
-                class="card__image"
-                src="./images/site/desenvolvimento-web.webp"
-                alt="Ilustração de um monitor com uma janela de navegador exibindo blocos de conteúdo"
-                width="1280"
-                height="800"
-                loading="lazy"
-              />
-              <div class="card__content">
-                <h3 class="card__title">Desenvolvimento Web</h3>
-                <p class="card__text">
-                  Criamos sites institucionais, sistemas web e aplicações sob medida para as
-                  necessidades específicas do seu negócio.
-                </p>
-                <p class="card__benefit">Presença digital profissional e ferramentas feitas para o seu processo.</p>
-                <ul class="card__list">
-                  <li>Sites institucionais</li>
-                  <li>Sistemas web personalizados</li>
-                  <li>E-commerce</li>
-                  <li>APIs e integrações</li>
-                </ul>
-                <a class="card__cta" href="#contato">Falar sobre desenvolvimento</a>
+          <div class="cards cards--services">
+            <article class="card reveal">
+              <div class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8M10 9l-2 2 2 2M14 9l2 2-2 2"/></svg>
               </div>
+              <h3 class="card__title">Desenvolvimento de sistemas</h3>
+              <p class="card__text">Criação de sistemas web sob medida para apoiar processos, rotinas e objetivos do seu negócio.</p>
+              <p class="card__benefit">Benefício: ferramentas alinhadas à forma como sua empresa opera.</p>
             </article>
-            <article class="card card--service">
-              <img
-                class="card__image"
-                src="./images/site/infraestrutura-integracao.webp"
-                alt="Ilustração de servidores em rack conectados a nós de integração"
-                width="1280"
-                height="800"
-                loading="lazy"
-              />
-              <div class="card__content">
-                <h3 class="card__title">Gestão de TI</h3>
-                <p class="card__text">
-                  Cuidamos da infraestrutura tecnológica da sua empresa para que você possa focar
-                  no seu negócio, com planejamento e execução.
-                </p>
-                <p class="card__benefit">Mais estabilidade e organização para a área de tecnologia.</p>
-                <a class="card__cta" href="#contato">Falar sobre gestão de TI</a>
+            <article class="card reveal">
+              <div class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 16V8m6 8V4m6 12v-6"/></svg>
               </div>
+              <h3 class="card__title">Sistemas de gestão empresarial</h3>
+              <p class="card__text">Soluções para centralizar informações, organizar atividades e apoiar o controle da operação.</p>
+              <p class="card__benefit">Benefício: mais visibilidade e organização para a gestão.</p>
             </article>
-            <article class="card card--service">
-              <img
-                class="card__image"
-                src="./images/site/gestao-automacao.webp"
-                alt="Ilustração de painel com gráficos abstratos e um fluxo de etapas automatizadas"
-                width="1280"
-                height="800"
-                loading="lazy"
-              />
-              <div class="card__content">
-                <h3 class="card__title">Automação de Processos</h3>
-                <p class="card__text">
-                  Automatizamos tarefas repetitivas e otimizamos fluxos de trabalho para ganhar
-                  produtividade e reduzir custos operacionais.
-                </p>
-                <p class="card__benefit">Menos retrabalho e informações organizadas para decidir melhor.</p>
-                <ul class="card__list">
-                  <li>Automação de workflows</li>
-                  <li>Integração de sistemas</li>
-                  <li>Dashboards e relatórios</li>
-                </ul>
-                <a class="card__cta" href="#contato">Falar sobre automação</a>
+            <article class="card reveal">
+              <div class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h6m-6 5h4m-4 5h6M14 7h6M16 12h4M14 17h6"/><circle cx="12" cy="12" r="2"/></svg>
               </div>
+              <h3 class="card__title">Automação de processos</h3>
+              <p class="card__text">Automação de tarefas e fluxos para reduzir retrabalho e tornar rotinas mais eficientes.</p>
+              <p class="card__benefit">Benefício: ganho de tempo e consistência nos processos.</p>
+            </article>
+            <article class="card reveal">
+              <div class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4m0 10v4M3 12h4m10 0h4"/><rect x="7" y="7" width="10" height="10" rx="2"/></svg>
+              </div>
+              <h3 class="card__title">Soluções personalizadas</h3>
+              <p class="card__text">Projetos desenvolvidos conforme o contexto, os desafios e as prioridades de cada empresa.</p>
+              <p class="card__benefit">Benefício: tecnologia adaptada ao seu cenário, sem excessos.</p>
+            </article>
+            <article class="card reveal">
+              <div class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10Z"/><path d="M9.5 11.5 11 13l3.5-3.5"/></svg>
+              </div>
+              <h3 class="card__title">Consultoria e suporte tecnológico</h3>
+              <p class="card__text">Orientação para decisões de tecnologia e apoio na evolução das soluções adotadas.</p>
+              <p class="card__benefit">Benefício: acompanhamento profissional com foco em continuidade.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section" id="solucoes">
+      <section class="section section-anchor" id="solucoes" aria-labelledby="solucoes-title">
         <div class="container">
-          <header class="section-header">
-            <span class="section-header__eyebrow">Soluções</span>
-            <h2 class="section-header__title">Soluções SaaS</h2>
-            <p class="section-header__subtitle">
-              Soluções prontas para atender às necessidades do seu negócio.
-            </p>
+          <header class="section-head reveal">
+            <p class="eyebrow">Soluções</p>
+            <h2 class="section-title" id="solucoes-title">Sistemas desenvolvidos para simplificar a gestão.</h2>
           </header>
-          <div class="cards-grid cards-grid--solutions">
-            <article class="card card--solution">
-              <div class="card__header">
-                <span class="card__badge" style="--badge-color: #E87C3B">Sistema completo para restaurantes</span>
+          <div class="cards cards--solutions">
+            <article class="card card--product reveal">
+              <div class="card__product-head">
+                <span class="card__category">Sistema para restaurantes</span>
                 <h3 class="card__title">GT Restaurantes</h3>
               </div>
               <p class="card__text">
-                Gerencie mesas, cardápio, estoque, vendas e relatórios em um só lugar.
+                Solução para organizar a operação de restaurantes, reunindo rotinas essenciais em um único sistema.
               </p>
-              <ul class="card__list">
-                <li>Gestão completa</li>
-                <li>Pedidos</li>
+              <ul class="check-list" aria-label="Funcionalidades principais">
+                <li>Gestão de mesas e pedidos</li>
                 <li>Cardápio digital</li>
-                <li>Relatórios em tempo real</li>
+                <li>Controle de estoque</li>
+                <li>Vendas e relatórios</li>
               </ul>
-              <div class="card__footer">
-                <p class="card__price">Consulte valores</p>
+              <p class="card__benefit">Benefício: mais controle operacional e informações para apoiar a gestão.</p>
+              <div class="card__actions">
                 <a
-                  class="button button--primary"
+                  class="btn btn--primary"
                   href="https://gest-o-de-restaurantes.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                >
-                  Ver produto
-                </a>
+                >Conhecer o sistema</a>
+                <span class="card__note">Consulte valores</span>
               </div>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section section--soft" id="contato">
+      <section class="section section--alt section-anchor" id="diferenciais" aria-labelledby="diferenciais-title">
         <div class="container">
-          <header class="section-header">
-            <span class="section-header__eyebrow">Contato</span>
-            <h2 class="section-header__title">Fale com a Gestão Tech</h2>
-            <p class="section-header__subtitle">
-              Preencha os campos abaixo e entraremos em contato pelo WhatsApp.
+          <header class="section-head reveal">
+            <p class="eyebrow">Diferenciais</p>
+            <h2 class="section-title" id="diferenciais-title">Mais controle. Mais eficiência. Mais resultados.</h2>
+          </header>
+          <div class="differentials reveal">
+            <div class="differential"><span class="differential__mark" aria-hidden="true">01</span><p>Soluções orientadas às necessidades empresariais.</p></div>
+            <div class="differential"><span class="differential__mark" aria-hidden="true">02</span><p>Tecnologia aplicada à rotina operacional.</p></div>
+            <div class="differential"><span class="differential__mark" aria-hidden="true">03</span><p>Organização e controle de processos.</p></div>
+            <div class="differential"><span class="differential__mark" aria-hidden="true">04</span><p>Facilidade de utilização nas soluções desenvolvidas.</p></div>
+            <div class="differential"><span class="differential__mark" aria-hidden="true">05</span><p>Evolução contínua das soluções.</p></div>
+            <div class="differential"><span class="differential__mark" aria-hidden="true">06</span><p>Compromisso com a experiência do cliente.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-anchor" id="contato" aria-labelledby="contato-title">
+        <div class="container">
+          <header class="section-head reveal">
+            <p class="eyebrow">Contato</p>
+            <h2 class="section-title" id="contato-title">Vamos conversar sobre o seu negócio?</h2>
+            <p class="section-lead">
+              Conte-nos sobre os desafios da sua empresa. Nossa equipe poderá ajudar a identificar
+              soluções tecnológicas adequadas às suas necessidades.
             </p>
           </header>
-          <div class="contact">
-            <form class="form" id="contact-form" novalidate>
-              <div class="form__row">
-                <div class="form__field">
-                  <label class="form__label" for="nome">Nome</label>
-                  <input
-                    class="form__input"
-                    id="nome"
-                    name="nome"
-                    type="text"
-                    autocomplete="name"
-                    required
-                    minlength="2"
-                  />
-                  <p class="form__error" id="erro-nome" aria-live="polite"></p>
+
+          <div class="contact-layout">
+            <form class="form card reveal" id="contact-form" novalidate>
+              <div class="form-row">
+                <div class="field">
+                  <label class="field__label" for="nome">Nome</label>
+                  <input class="field__input" id="nome" name="nome" type="text" autocomplete="name" required minlength="2" />
+                  <p class="field__error" id="erro-nome" aria-live="polite"></p>
                 </div>
-                <div class="form__field">
-                  <label class="form__label" for="telefone">Telefone com DDD</label>
-                  <input
-                    class="form__input"
-                    id="telefone"
-                    name="telefone"
-                    type="tel"
-                    inputmode="tel"
-                    autocomplete="tel"
-                    placeholder="(61) 99999-9999"
-                    required
-                  />
-                  <p class="form__error" id="erro-telefone" aria-live="polite"></p>
+                <div class="field">
+                  <label class="field__label" for="telefone">Telefone</label>
+                  <input class="field__input" id="telefone" name="telefone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(61) 99999-9999" required />
+                  <p class="field__error" id="erro-telefone" aria-live="polite"></p>
                 </div>
               </div>
-              <div class="form__field">
-                <label class="form__label" for="servico">Serviço de interesse</label>
-                <select class="form__input form__select" id="servico" name="servico">
-                  <option value="">Selecione (opcional)</option>
-                  <option value="Desenvolvimento Web">Desenvolvimento Web</option>
-                  <option value="Gestão de TI">Gestão de TI</option>
-                  <option value="Automação de Processos">Automação de Processos</option>
+              <div class="field">
+                <label class="field__label" for="servico">Serviço de interesse</label>
+                <select class="field__input" id="servico" name="servico">
+                  <option value="">Selecione uma opção</option>
+                  <option value="Desenvolvimento de sistemas">Desenvolvimento de sistemas</option>
+                  <option value="Sistemas de gestão empresarial">Sistemas de gestão empresarial</option>
+                  <option value="Automação de processos">Automação de processos</option>
+                  <option value="Soluções personalizadas">Soluções personalizadas</option>
+                  <option value="Consultoria e suporte tecnológico">Consultoria e suporte tecnológico</option>
                   <option value="GT Restaurantes">GT Restaurantes</option>
-                  <option value="Outro">Outro</option>
+                  <option value="Outro">Outro assunto</option>
                 </select>
               </div>
-              <div class="form__field">
-                <label class="form__label" for="mensagem">Mensagem</label>
-                <textarea
-                  class="form__input form__textarea"
-                  id="mensagem"
-                  name="mensagem"
-                  rows="5"
-                  required
-                  minlength="10"
-                ></textarea>
-                <p class="form__error" id="erro-mensagem" aria-live="polite"></p>
+              <div class="field">
+                <label class="field__label" for="mensagem">Mensagem</label>
+                <textarea class="field__input field__input--area" id="mensagem" name="mensagem" rows="5" required minlength="10"></textarea>
+                <p class="field__error" id="erro-mensagem" aria-live="polite"></p>
               </div>
-              <button class="button button--primary form__submit" type="submit">
-                Enviar pelo WhatsApp
-              </button>
-              <p class="form__help">
-                Ao enviar, você será redirecionado para o WhatsApp. Os dados não são armazenados
-                neste site.
+              <button class="btn btn--primary form__submit" type="submit">Enviar mensagem</button>
+              <p class="form__note">
+                Ao enviar, as informações preenchidas serão usadas para montar uma mensagem no WhatsApp.
+                Este site não armazena os dados em banco de dados.
               </p>
               <p class="form__fallback" id="whatsapp-fallback" hidden>
                 Não foi possível abrir o WhatsApp automaticamente.
-                <a id="whatsapp-fallback-link" href="#" target="_blank" rel="noopener noreferrer">Clique aqui para abrir</a>.
+                <a id="whatsapp-fallback-link" href="https://wa.me/5561998361296" target="_blank" rel="noopener noreferrer">Abrir conversa no WhatsApp</a>.
               </p>
             </form>
-            <aside class="contact__info">
-              <div class="contact__card">
-                <h3 class="contact__title">Atendimento</h3>
-                <p class="contact__text">Telefone/WhatsApp: <strong>(61) 99836-1296</strong></p>
-                <p class="contact__text">Horário: Seg — Sex, 09:00 — 18:00</p>
-                <a
-                  class="button button--secondary contact__whatsapp"
-                  href="https://wa.me/5561998361296"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Abrir WhatsApp
-                </a>
+
+            <aside class="contact-aside reveal" aria-label="Canais de contato">
+              <div class="card contact-card">
+                <h3 class="card__title">Canais de atendimento</h3>
+                <p class="card__text">Telefone e WhatsApp: <strong>(61) 99836-1296</strong></p>
+                <p class="card__text">Horário: segunda a sexta, 09:00 às 18:00</p>
+                <a class="btn btn--secondary contact-card__btn" href="https://wa.me/5561998361296" target="_blank" rel="noopener noreferrer">Conversar no WhatsApp</a>
               </div>
             </aside>
           </div>
@@ -357,30 +314,25 @@
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="container footer__inner">
-        <div class="footer__brand">
-          <img
-            src="./images/brand/logo-gestao-tech.svg"
-            alt="Gestão Tech"
-            class="footer__logo"
-            width="680"
-            height="140"
-          />
-          <p class="footer__tagline">Tecnologia que gera resultados.</p>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <img src="./images/brand/logo-gestao-tech.svg" alt="Gestão Tech" width="680" height="140" loading="lazy" decoding="async" />
+          <p>Tecnologia que gera resultados.</p>
         </div>
-        <nav class="footer__nav" aria-label="Rodapé">
-          <ul class="footer__list">
-            <li><a class="footer__link" href="#home">Início</a></li>
-            <li><a class="footer__link" href="#sobre">Sobre</a></li>
-            <li><a class="footer__link" href="#servicos">Serviços</a></li>
-            <li><a class="footer__link" href="#solucoes">Soluções</a></li>
-            <li><a class="footer__link" href="#contato">Contato</a></li>
+        <nav aria-label="Rodapé">
+          <ul class="footer-links">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre nós</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#solucoes">Soluções</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li><a href="https://wa.me/5561998361296" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
           </ul>
         </nav>
-        <div class="footer__bottom">
-          <p class="footer__copy">© <span id="ano-atual"></span> Gestão Tech. Todos os direitos reservados.</p>
-        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>© <span id="ano-atual"></span> Gestão Tech. Todos os direitos reservados.</p>
       </div>
     </footer>
 
