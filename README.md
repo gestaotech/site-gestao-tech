@@ -1,157 +1,117 @@
 # Gestão Tech — site institucional
 
-Site institucional da Gestão Tech. 
+Site institucional da Gestão Tech, desenvolvido na branch `feat/site-estatico-html-css-js`.
 
-- **Versão estática (atual nesta branch):** HTML5, CSS3 e JavaScript puro (Vanilla JS). Arquivos em `index.html`, `css/style.css`, `js/script.js`. Não requer build ou Node.js para abrir.
-- **Versão Next.js (preservada):** migração para **Next.js 16 (App Router), React 19 e TypeScript** (modo estrito), mantida em `feat/migracao-nextjs` e no histórico do Git.
+- **Versão estática (atual nesta branch):** HTML5, CSS3 e JavaScript puro (Vanilla JS). Sem build, sem framework e sem dependências de interface. Arquivos principais: `index.html`, `css/style.css`, `js/script.js`.
+- **Versão Next.js (preservada):** mantida em `feat/migracao-nextjs` e no histórico do Git.
 
-> Tecnologia que gera resultados.
+> Tecnologia que transforma a gestão da sua empresa.
 
-## Versão estática (HTML/CSS/JS)
+## Como visualizar a prévia (versão estática)
 
-**Como abrir:**
-- Abrir `index.html` diretamente no navegador (funciona na maioria dos casos).
-- Ou servir via servidor HTTP local (recomendado para alguns navegadores): `npx serve .` ou `python -m http.server 8000` e acessar `http://localhost:8000`.
-
-**Arquivos:**
-- `index.html` — página única com todas as seções
-- `css/style.css` — estilos e tokens
-- `js/script.js` — menu, formulário e integração com WhatsApp
-- `images/` — logotipos e ilustrações
-- `docs/estrutura-do-site.md` — estrutura técnica
-
-**Alterar conteúdo:**
-- Textos principais: editar diretamente em `index.html`.
-- Cores/tokens: `css/style.css` (`:root`).
-- Contato/WhatsApp: número `5561998361296` em `index.html` e `js/script.js`.
-- Soluções SaaS: seção "Soluções" em `index.html` (seguir padrão existente). Não exibir preços não confirmados.
-
-**Formulário de contato:**
-1. Valida nome (>=2), telefone com DDD (10 ou 11 dígitos), mensagem (>=10).
-2. Monta mensagem organizada e codifica para URL.
-3. Abre `https://wa.me/5561998361296` em nova aba com proteção `noopener/noreferrer`.
-4. Se o pop-up for bloqueado, exibe link alternativo.
-5. Os dados não são armazenados neste site.
-
-**Limitações da versão estática:**
-- Sem sitemap/Open Graph canônico (domínio definitivo não definido).
-- Sem envio para servidor/CRM (apenas redirecionamento ao WhatsApp).
-
-## Versão Next.js (preservada)
-
-**Requisitos**
-- Node.js 20.9 ou superior
-- npm 10 ou superior
-
-**Instalação e execução**
+Opção recomendada (servidor local):
 
 ```bash
-npm install
-npm run dev          # desenvolvimento em http://localhost:3000
+npx --yes serve . -l 4173
 ```
 
-## Scripts
+Acesse `http://localhost:4173`.
 
-| Comando | O que faz |
-| --- | --- |
-| `npm run dev` | Servidor de desenvolvimento |
-| `npm run build` | Build de produção (inclui verificação de tipos) |
-| `npm run start` | Serve o build de produção |
-| `npm run typecheck` | `tsc --noEmit` (TypeScript estrito) |
-| `npm run lint` | ESLint (regras do Next.js e de TypeScript) |
-| `npm test` | Testes automatizados (Vitest + Testing Library) |
-| `npm run test:watch` | Testes em modo interativo |
-
-Para validar uma mudança antes de publicar, rode nesta ordem:
+Alternativas:
 
 ```bash
-npm run typecheck && npm run lint && npm test && npm run build
+python -m http.server 8000
 ```
+
+Também é possível abrir `index.html` diretamente no navegador, mas o servidor local é mais confiável para validação.
 
 ## Estrutura
 
-```
-brand/                       Logo original, fontes das ilustrações e gerador da marca (não servido)
-public/images/               Logos (brand/) e ilustrações (site/)
-src/
-  app/
-    layout.tsx               Layout raiz, idioma pt-BR, fontes e metadados
-    page.tsx                 Página inicial (compõe as seções)
-    globals.css              Design tokens e estilos globais
-    icon.png                 Ícone (símbolo "G")
-    robots.ts                robots.txt
-    not-found.tsx            Página 404
-  components/
-    layout/                  Header (cliente) e Footer
-    sections/                Hero, About, Services, Solutions, Contact, ContactForm (cliente)
-    ui/                      Button, SectionHeader, Reveal (cliente)
-  data/
-    site.ts                  Nome, navegação, contato e textos institucionais
-    services.ts              Serviços oferecidos
-    solutions.ts             Catálogo de soluções SaaS
-    types.ts                 Tipos do conteúdo
-  lib/
-    contact.ts               Validação, máscara de telefone e mensagem do WhatsApp
-tests/                       Testes automatizados
-docs/migracao-nextjs.md      Auditoria, decisões e pendências da migração
+```text
+site-gestao-tech/
+├── index.html              # Página única (seções institucionais)
+├── css/style.css           # Tokens, layout, componentes e responsividade
+├── js/script.js            # Navegação, acessibilidade, animações e formulário
+├── images/
+│   ├── brand/              # Logo e favicon
+│   └── site/               # Ilustrações (preservadas no repositório)
+├── docs/
+│   ├── estrutura-do-site.md
+│   └── identidade-visual.md
+└── README.md
 ```
 
-Componentes são Server Components por padrão. Usam `"use client"` apenas quando precisam de estado ou APIs do navegador: cabeçalho (menu e seção ativa), formulário de contato e revelação de elementos ao rolar.
+## Seções implementadas
 
-## Conteúdo
+1. **Cabeçalho/navegação:** logo, Início, Sobre nós, Serviços, Soluções, Contato, botão "Fale com a empresa", menu móvel acessível, efeito ao rolar e indicação visual da seção ativa.
+2. **Hero:** mensagem principal "Tecnologia que transforma a gestão da sua empresa.", texto complementar, botões "Conheça nossas soluções" e "Fale com um especialista", fundo institucional escuro com elementos gráficos abstratos em CSS e animação de entrada discreta.
+3. **Sobre nós:** "Tecnologia com propósito. Gestão com resultados.", com texto institucional sem dados inventados.
+4. **Serviços:** 5 categorias em cards com ícones SVG/CSS — Desenvolvimento de sistemas; Sistemas de gestão empresarial; Automação de processos; Soluções personalizadas; Consultoria e suporte tecnológico.
+5. **Soluções:** GT Restaurantes (produto existente/publicado no repositório), com link válido `https://gest-o-de-restaurantes.vercel.app/` e **"Consulte valores"** (sem preço não confirmado).
+6. **Diferenciais:** "Mais controle. Mais eficiência. Mais resultados." com 6 diferenciais (sem números fictícios).
+7. **Contato:** canais válidos preservados (WhatsApp/telefone e horário), formulário com nome, telefone, serviço de interesse e mensagem; integração com WhatsApp preservada e nota transparente sobre tratamento dos dados.
 
-Textos e dados ficam em `src/data/`. Para alterar o conteúdo, não é preciso mexer nos componentes.
+## Funcionalidades preservadas
 
-- **Contato:** `src/data/site.ts` (`contact`). O contato é feito somente por telefone/WhatsApp; não há e-mail exibido.
-- **Soluções:** `src/data/solutions.ts`. Um produto aparece no site apenas com `published: true`. O preço só é exibido com `price.confirmed: true`; caso contrário aparece "Consulte valores".
-- **Serviços:** `src/data/services.ts`.
+- Validação do formulário (nome, telefone com DDD 10–11 dígitos, mensagem mínima).
+- Máscara de telefone.
+- Montagem de mensagem e abertura de `https://wa.me/5561998361296` com `encodeURIComponent`, `target="_blank"` e `rel="noopener noreferrer"`.
+- Fallback com link manual quando o pop-up do WhatsApp é bloqueado.
+- Menu móvel acessível (`aria-expanded`, `aria-controls`, fechar ao navegar, fechar com `Escape`, ajuste em redimensionamento).
+- Ano automático no rodapé.
+- Skip link "Pular para o conteúdo".
+- Estados de foco visíveis e navegação por teclado.
+- Respeito a `prefers-reduced-motion` (revelações/animações reduzidas).
 
-## Identidade visual
+## Identidade visual e design
 
-Logo, ícones, ilustrações e licenças estão documentados em docs/identidade-visual.md. Os arquivos da marca estão em public/images/brand/ (SVG e PNG) e as ilustrações em public/images/site/ (WebP, com fontes em rand/illustrations/).
+- Paleta institucional centralizada em variáveis CSS (`:root`): `#115C6B`, `#0C4A56`, `#3BB7A7`, `#E87C3B`, `#FFFFFF`, `#F4F7F8`, `#263238`.
+- Tipografia: **Manrope** (títulos) e **Inter** (textos), com fallbacks.
+- Design sem protagonismo de fotografias; composição baseada em cores, tipografia, cards, ícones e elementos abstratos.
+- Animações discretas: entrada por revelação ao rolar (IntersectionObserver), transições suaves em botões/cards e efeito sutil no cabeçalho.
 
+## Como alterar conteúdo
 
-As cores foram extraídas do logo oficial e centralizadas em `src/app/globals.css`:
+- **Textos/seções:** editar `index.html`.
+- **Cores, espaçamentos, sombras e tempos:** editar variáveis em `css/style.css`.
+- **Comportamentos (menu, seção ativa, revelação, formulário/WhatsApp):** editar `js/script.js`.
+- **Contato WhatsApp:** número `5561998361296` em `index.html` e `js/script.js`.
+- **Soluções SaaS:** manter apenas produtos existentes/identificados; não exibir preços sem confirmação.
 
-| Token | Valor | Uso |
-| --- | --- | --- |
-| `--color-brand` | `#115C6B` | Cor principal, botões, títulos de destaque |
-| `--color-brand-strong` | `#0C4A56` | Estado de hover |
-| `--color-brand-teal` | `#3BB7A7` | Detalhes decorativos |
-| `--color-brand-orange` | `#E87C3B` | Decorativo (contraste insuficiente para texto pequeno) |
-| `--color-brand-orange-text` | `#B4531B` | Textos acentuados curtos |
-| `--color-brand-amber` | `#F5A623` | Decorativo; cor de identificação de produtos |
+## Testes executados (nesta alteração)
 
-Os códigos ainda não constam de um guia de marca aprovado. Para ajustar, altere apenas as variáveis em `globals.css`.
+Executados localmente com servidor estático (`npx --yes serve . -l 4173`) e verificação automatizada via navegador no ambiente de desenvolvimento:
 
-Todos os pares de texto e controles foram verificados contra o critério WCAG AA (texto ≥ 4,5:1; contornos de campos ≥ 3:1).
+| Teste | Resultado |
+| --- | --- |
+| Sintaxe JS (`node --check js/script.js`) | OK |
+| Carregamento da página (`http://localhost:4173/`) | OK (HTTP 200) |
+| Console do navegador (nível erro) | Sem erros observados na sessão testada |
+| Estrutura/seções e links principais (âncoras, WhatsApp, GT Restaurantes, "Consulte valores") | OK |
+| Menu móvel (abrir/fechar por clique e `Escape`, atributos ARIA) | OK |
+| Indicação de seção ativa (atributos/estado na navegação) | OK (verificado por inspeção de estado no DOM) |
+| Revelação de elementos (`.reveal` / `.is-visible`) | OK (elementos visíveis observados) |
+| Formulário inválido (mensagens de erro e `aria-invalid`) | OK |
+| Formulário válido (URL `wa.me` gerada com `encodeURIComponent` e fallback preparado) | OK |
 
-## Formulário de contato
+**Não executados nesta etapa:** validação visual manual completa em múltiplos dispositivos reais, auditorias formais de Lighthouse/WCAG, e suíte automatizada da versão Next.js (esta branch é estática). A `prefers-reduced-motion` está implementada em CSS/JS; recomenda-se validação manual no navegador/sistema.
 
-1. Valida nome, telefone (DDD obrigatório, 10 ou 11 dígitos) e mensagem.
-2. Monta a mensagem no formato do formulário original e codifica a URL com `encodeURIComponent`.
-3. Abre `https://wa.me/5561998361296` em nova aba, sem `noopener` durante a chamada, e remove `opener` logo em seguida. Isso permite detectar bloqueio de pop-up.
-4. Se o navegador bloquear a janela, exibe um link manual para o WhatsApp.
+## Pendências conhecidas
 
-A página não envia nem armazena os dados. O envio só se completa quando o visitante confirma no WhatsApp.
-
-## Testes
-
-```bash
-npm test
-```
-
-Cobrem: validação e formatação do telefone, mensagem e URL do WhatsApp, abertura e fechamento do menu (incluindo Escape e foco), comportamento do formulário (erros, envio, bloqueio de pop-up), regras do catálogo, renderização da página, links internos e a ausência de métricas ou e-mail não confirmados.
+- Domínio definitivo/canonical/OG image absoluta dependem de confirmação (não configurados para evitar URL inventada).
+- Não há backend/CRM; envio de contato depende da confirmação do usuário no WhatsApp.
+- Ilustrações em `images/site/` permanecem no repositório, mas não são protagonistas no layout redesenhado.
+- Recomenda-se revisão visual humana (identidade, contraste percebido e responsividade em dispositivos reais) antes de publicação.
 
 ## Publicação
 
-O projeto gera um build de produção com `npm run build`. Ainda não há configuração de hospedagem no repositório. Antes de publicar:
+Esta branch **não deve ser mesclada para `main` nem publicada** sem autorização. Antes de qualquer publicação:
 
-1. Confirmar o provedor de hospedagem e o domínio definitivo.
-2. Rodar a sequência de validação acima.
-3. Validar em um ambiente de preview.
-4. Só então apontar o domínio de produção.
+1. Confirmar hospedagem/domínio.
+2. Validar prévia em ambiente de staging.
+3. Revisar acessibilidade, SEO e conteúdo institucional final.
+4. Obter autorização explícita para merge/publicação.
 
-Para voltar à versão anterior, o HTML/CSS/JS original permanece no histórico do Git (commit `f423532`, branch `main`).
+## Versão Next.js (preservada)
 
-Enquanto o domínio não estiver confirmado, não há sitemap nem imagem de compartilhamento (Open Graph). Ambos dependem da URL definitiva. A pendência está detalhada em `docs/migracao-nextjs.md`.
+A migração Next.js permanece preservada fora desta branch. Para trabalhar nela, use `feat/migracao-nextjs` e siga as instruções do README/histórico daquela versão.
