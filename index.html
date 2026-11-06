@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
+    <!-- Metadados básicos e SEO -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Gestão Tech | Tecnologia para gestão e resultados</title>
@@ -18,6 +19,8 @@
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:site_name" content="Gestão Tech" />
     <link rel="icon" type="image/png" href="./images/brand/favicon.png" />
+
+    <!-- Tipografia (Google Fonts) com fallbacks definidos no CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,8 +30,10 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
+    <!-- Acessibilidade: permite pular navegação repetida -->
     <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
 
+    <!-- Cabeçalho fixo: marca, navegação por âncoras e CTA -->
     <header class="site-header" id="inicio">
       <div class="container header-inner">
         <a class="brand" href="#inicio" aria-label="Gestão Tech — início">
@@ -41,6 +46,7 @@
           />
         </a>
 
+        <!-- Botão do menu móvel (controlado por js/script.js) -->
         <button
           class="nav-toggle"
           type="button"
@@ -69,6 +75,7 @@
     </header>
 
     <main id="conteudo-principal">
+      <!-- Hero: mensagem principal, CTAs e elementos gráficos abstratos (CSS) -->
       <section class="hero section-anchor" aria-labelledby="hero-title">
         <div class="hero__bg" aria-hidden="true">
           <span class="hero__shape hero__shape--grid"></span>
@@ -89,6 +96,7 @@
               <a class="btn btn--ghost" href="#contato">Fale com um especialista</a>
             </div>
           </div>
+          <!-- Painel decorativo abstrato (não é fotografia) -->
           <div class="hero__visual reveal" aria-hidden="true">
             <div class="hero-panel">
               <div class="hero-panel__bar"></div>
@@ -107,6 +115,7 @@
         </div>
       </section>
 
+      <!-- Sobre a Gestão Tech -->
       <section class="section section-anchor" id="sobre" aria-labelledby="sobre-title">
         <div class="container">
           <header class="section-head reveal">
@@ -143,6 +152,7 @@
         </div>
       </section>
 
+      <!-- Serviços: 5 categorias com ícones SVG -->
       <section class="section section--alt section-anchor" id="servicos" aria-labelledby="servicos-title">
         <div class="container">
           <header class="section-head reveal">
@@ -194,6 +204,7 @@
         </div>
       </section>
 
+      <!-- Soluções: somente produtos existentes/identificados (sem preço inventado) -->
       <section class="section section-anchor" id="solucoes" aria-labelledby="solucoes-title">
         <div class="container">
           <header class="section-head reveal">
@@ -230,6 +241,7 @@
         </div>
       </section>
 
+      <!-- Diferenciais (sem números ou dados comerciais fictícios) -->
       <section class="section section--alt section-anchor" id="diferenciais" aria-labelledby="diferenciais-title">
         <div class="container">
           <header class="section-head reveal">
@@ -247,6 +259,7 @@
         </div>
       </section>
 
+      <!-- Contato: formulário com validação e integração WhatsApp (sem armazenamento local no site) -->
       <section class="section section-anchor" id="contato" aria-labelledby="contato-title">
         <div class="container">
           <header class="section-head reveal">
@@ -314,6 +327,7 @@
       </section>
     </main>
 
+    <!-- Rodapé institucional -->
     <footer class="site-footer">
       <div class="container footer-inner">
         <div class="footer-brand">
@@ -336,6 +350,7 @@
       </div>
     </footer>
 
+    <!-- JavaScript puro: navegação, animações acessíveis e formulário/WhatsApp -->
     <script src="./js/script.js"></script>
   </body>
 </html>

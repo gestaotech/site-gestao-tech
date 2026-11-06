@@ -1,15 +1,26 @@
+/**
+ * Site institucional Gestão Tech (estático)
+ * Comportamentos: ano do rodapé, cabeçalho ao rolar, menu móvel acessível,
+ * indicação de seção ativa, revelação ao rolar e formulário com WhatsApp.
+ * Stack: JavaScript puro (sem dependências). Respeita prefers-reduced-motion.
+ */
 (function () {
   "use strict";
 
+  // Número oficial do WhatsApp (DDI + DDD + número)
   var WHATSAPP_NUMBER = "5561998361296";
 
-  // Ano no rodapé
+  /* --------------------------------------------------------------------------
+   * Rodapé: ano atual automático
+   * -------------------------------------------------------------------------- */
   var yearEl = document.getElementById("ano-atual");
   if (yearEl) {
     yearEl.textContent = String(new Date().getFullYear());
   }
 
-  // Cabeçalho: estado ao rolar
+  /* --------------------------------------------------------------------------
+   * Cabeçalho: aplica estilo visual após pequena rolagem
+   * -------------------------------------------------------------------------- */
   var header = document.querySelector(".site-header");
   function updateHeader() {
     if (!header) return;
@@ -22,9 +33,16 @@
   updateHeader();
   window.addEventListener("scroll", updateHeader, { passive: true });
 
-  // Menu móvel
+  /* --------------------------------------------------------------------------
+   * Menu móvel acessível
+   * - Alterna abertura pelo botão
+   * - Fecha ao navegar (mobile)
+   * - Fecha com Escape e restaura foco no botão
+   * - Recolhe ao voltar para layout desktop
+   * -------------------------------------------------------------------------- */
   var toggle = document.querySelector(".nav-toggle");
   var nav = document.getElementById("site-nav");
+
   function closeMenu(focusToggle) {
     if (!toggle || !nav) return;
     nav.classList.remove("is-open");
@@ -34,12 +52,14 @@
       toggle.focus();
     }
   }
+
   function openMenu() {
     if (!toggle || !nav) return;
     nav.classList.add("is-open");
     toggle.setAttribute("aria-expanded", "true");
     toggle.setAttribute("aria-label", "Fechar menu");
   }
+
   if (toggle && nav) {
     toggle.addEventListener("click", function () {
       var isOpen = nav.classList.contains("is-open");
@@ -47,6 +67,7 @@
       else openMenu();
     });
 
+    // Fecha o menu após clique em links no contexto mobile
     nav.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
         if (window.matchMedia("(max-width: 1023px)").matches) {
@@ -55,12 +76,14 @@
       });
     });
 
+    // Suporte a teclado: Escape fecha o menu
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && nav.classList.contains("is-open")) {
         closeMenu(true);
       }
     });
 
+    // Evita menu "aberto" ao mudar para desktop
     window.addEventListener("resize", function () {
       if (window.matchMedia("(min-width: 1024px)").matches) {
         closeMenu(false);
@@ -68,12 +91,16 @@
     });
   }
 
-  // Seção ativa na navegação
+  /* --------------------------------------------------------------------------
+   * Navegação: indica a seção ativa conforme a rolagem
+   * Usa IntersectionObserver quando disponível; fallback marca "Início".
+   * -------------------------------------------------------------------------- */
   var navLinks = document.querySelectorAll(".site-nav__link[data-section]");
   var sections = [];
   navLinks.forEach(function (link) {
     var id = link.getAttribute("data-section");
     var section = id ? document.getElementById(id) : null;
+    // "Início" aponta para a área do hero/topo
     if (!section && id === "inicio") {
       section = document.querySelector(".hero");
     }
@@ -101,6 +128,7 @@
         });
         setActiveSection(activeId);
       },
+      // Margens ajustam o "ponto" de ativação considerando o cabeçalho fixo
       { rootMargin: "-25% 0px -60% 0px", threshold: [0, 0.1, 0.5] }
     );
     sections.forEach(function (s) { observer.observe(s.el); });
@@ -109,12 +137,18 @@
     setActiveSection("inicio");
   }
 
-  // Revelar elementos ao entrar na viewport
+  /* --------------------------------------------------------------------------
+   * Revelação de elementos ao entrar na viewport
+   * - Adiciona .is-visible em elementos .reveal
+   * - Desativada quando o usuário prefere movimento reduzido
+   * -------------------------------------------------------------------------- */
   var reveals = document.querySelectorAll(".reveal");
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
   function showAllReveals() {
     reveals.forEach(function (el) { el.classList.add("is-visible"); });
   }
+
   if (reduceMotion.matches || !("IntersectionObserver" in window)) {
     showAllReveals();
   } else if (reveals.length) {
@@ -131,21 +165,32 @@
     );
     reveals.forEach(function (el) { revealObserver.observe(el); });
   }
+
+  // Se a preferência mudar em tempo real, garante conteúdo visível
   if (typeof reduceMotion.addEventListener === "function") {
     reduceMotion.addEventListener("change", function (e) {
       if (e.matches) showAllReveals();
     });
   }
 
-  // Formulário: validação, máscara e WhatsApp
+  /* --------------------------------------------------------------------------
+   * Formulário de contato
+   * - Validação acessível (mensagens e aria-invalid)
+   * - Máscara de telefone BR
+   * - Monta mensagem e abre WhatsApp em nova aba
+   * - Exibe fallback manual se o pop-up for bloqueado
+   * - Não armazena dados no site
+   * -------------------------------------------------------------------------- */
   var form = document.getElementById("contact-form");
   var fallback = document.getElementById("whatsapp-fallback");
   var fallbackLink = document.getElementById("whatsapp-fallback-link");
 
+  /** Remove caracteres não numéricos. */
   function digits(value) {
     return String(value || "").replace(/\D/g, "");
   }
 
+  /** Formata telefone brasileiro com DDD (10 ou 11 dígitos). */
   function formatPhone(value) {
     var d = digits(value).slice(0, 11);
     if (d.length <= 2) return d ? "(" + d : "";
@@ -171,6 +216,7 @@
     var servico = form.querySelector("#servico");
     var mensagem = form.querySelector("#mensagem");
 
+    // Máscara durante a digitação
     if (telefone) {
       telefone.addEventListener("input", function (e) {
         e.target.value = formatPhone(e.target.value);
@@ -181,6 +227,7 @@
       e.preventDefault();
       var valid = true;
 
+      // Nome: mínimo 2 caracteres
       var nomeVal = nome ? nome.value.trim() : "";
       if (nomeVal.length < 2) {
         setError("erro-nome", "Informe seu nome.");
@@ -191,6 +238,7 @@
         setInvalid(nome, false);
       }
 
+      // Telefone: DDD + número (10 ou 11 dígitos)
       var telDigits = telefone ? digits(telefone.value) : "";
       if (telDigits.length < 10 || telDigits.length > 11) {
         setError("erro-telefone", "Informe um telefone válido com DDD.");
@@ -201,6 +249,7 @@
         setInvalid(telefone, false);
       }
 
+      // Mensagem: mínimo 10 caracteres
       var msgVal = mensagem ? mensagem.value.trim() : "";
       if (msgVal.length < 10) {
         setError("erro-mensagem", "Descreva sua necessidade com pelo menos 10 caracteres.");
@@ -219,6 +268,7 @@
         return;
       }
 
+      // Monta o texto enviado ao WhatsApp (somente no ato do envio)
       var servicoVal = servico ? servico.value.trim() : "";
       var text = "Olá, Gestão Tech!\n\n";
       text += "Nome: " + nomeVal + "\n";
@@ -230,6 +280,7 @@
       if (fallbackLink) fallbackLink.href = url;
       if (fallback) fallback.hidden = true;
 
+      // Tenta abrir o WhatsApp; se bloqueado, mostra link manual
       var popup = window.open(url, "_blank", "noopener,noreferrer");
       if (!popup) {
         if (fallback) fallback.hidden = false;

@@ -1,4 +1,15 @@
+/*
+ * Site institucional Gestão Tech (estático)
+ * Identidade visual: tokens, tipografia, componentes e responsividade.
+ * Paleta institucional: #115C6B, #0C4A56, #3BB7A7, #E87C3B, #FFFFFF, #F4F7F8, #263238.
+ * Animações discretas com suporte a prefers-reduced-motion.
+ */
+
+/* ---------------------------------------------------------------------------
+ * Design tokens (cores, tipografia, espaçamento, raios, sombras, movimento)
+ * --------------------------------------------------------------------------- */
 :root {
+  /* Cores da marca e superfícies */
   --color-brand: #115C6B;
   --color-brand-strong: #0C4A56;
   --color-brand-deep: #0C4A56;
@@ -13,9 +24,11 @@
   --color-danger: #B42318;
   --color-danger-soft: #FEF3F2;
 
+  /* Tipografia */
   --font-display: "Manrope", "Segoe UI", Arial, sans-serif;
   --font-body: "Inter", "Segoe UI", Arial, sans-serif;
 
+  /* Escala de espaçamento */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -28,6 +41,7 @@
   --space-16: 4rem;
   --space-20: 5rem;
 
+  /* Layout e UI */
   --content-width: 1180px;
   --header-height: 72px;
   --gutter: 1.25rem;
@@ -40,6 +54,9 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
 }
 
+/* ---------------------------------------------------------------------------
+ * Base / reset mínimo
+ * --------------------------------------------------------------------------- */
 *,
 *::before,
 *::after { box-sizing: border-box; }
@@ -65,12 +82,14 @@ ul { list-style: none; }
 h1, h2, h3 { font-family: var(--font-display); line-height: 1.12; text-wrap: balance; }
 p { text-wrap: pretty; }
 
+/* Foco visível para navegação por teclado */
 :focus-visible {
   outline: 3px solid var(--color-focus);
   outline-offset: 3px;
   border-radius: var(--radius-sm);
 }
 
+/* Link de acessibilidade: visível apenas ao receber foco */
 .skip-link {
   position: absolute;
   left: var(--gutter);
@@ -84,6 +103,9 @@ p { text-wrap: pretty; }
 }
 .skip-link:focus { top: 0.75rem; }
 
+/* ---------------------------------------------------------------------------
+ * Layout utilitário
+ * --------------------------------------------------------------------------- */
 .container {
   width: min(100% - 2 * var(--gutter), var(--content-width));
   margin-inline: auto;
@@ -132,7 +154,9 @@ p { text-wrap: pretty; }
 .eyebrow--on-dark { color: rgba(255,255,255,0.78); }
 .eyebrow--on-dark::before { background: var(--color-teal); }
 
-/* Buttons */
+/* ---------------------------------------------------------------------------
+ * Botões
+ * --------------------------------------------------------------------------- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -182,7 +206,9 @@ p { text-wrap: pretty; }
 }
 .btn--ghost:hover { background: rgba(255,255,255,0.14); }
 
-/* Header */
+/* ---------------------------------------------------------------------------
+ * Cabeçalho e navegação
+ * --------------------------------------------------------------------------- */
 .site-header {
   position: fixed;
   inset: 0 0 auto 0;
@@ -194,6 +220,7 @@ p { text-wrap: pretty; }
   border-bottom: 1px solid transparent;
   transition: border-color var(--duration) var(--ease), box-shadow var(--duration) var(--ease);
 }
+/* Estado aplicado por JS após rolagem */
 .site-header.is-scrolled {
   border-bottom-color: var(--color-border);
   box-shadow: var(--shadow-sm);
@@ -207,6 +234,7 @@ p { text-wrap: pretty; }
 .brand { display: inline-flex; flex-shrink: 0; }
 .brand img { height: 40px; width: auto; }
 
+/* Botão hamburguer (mobile) */
 .nav-toggle {
   display: inline-flex;
   flex-direction: column;
@@ -264,7 +292,9 @@ p { text-wrap: pretty; }
 .nav-cta--desktop { display: none; }
 .nav-cta--mobile { margin-top: var(--space-2); }
 
-/* Hero */
+/* ---------------------------------------------------------------------------
+ * Hero (fundo institucional + elementos abstratos em CSS)
+ * --------------------------------------------------------------------------- */
 .hero {
   position: relative;
   overflow: clip;
@@ -279,6 +309,7 @@ p { text-wrap: pretty; }
   pointer-events: none;
 }
 .hero__shape { position: absolute; }
+/* Grade sutil */
 .hero__shape--grid {
   inset: 0;
   background-image:
@@ -287,6 +318,7 @@ p { text-wrap: pretty; }
   background-size: 42px 42px;
   mask-image: radial-gradient(ellipse 80% 70% at 70% 40%, #000 30%, transparent 75%);
 }
+/* Anéis decorativos */
 .hero__shape--ring {
   top: -8%;
   right: -6%;
@@ -342,6 +374,7 @@ p { text-wrap: pretty; }
   gap: var(--space-3);
   margin-top: var(--space-8);
 }
+/* Painel abstrato (visível em desktop) */
 .hero__visual { display: none; }
 .hero-panel {
   width: 100%;
@@ -395,7 +428,9 @@ p { text-wrap: pretty; }
 }
 .hero-panel__metric-line--short { max-width: 65%; }
 
-/* About */
+/* ---------------------------------------------------------------------------
+ * Sobre
+ * --------------------------------------------------------------------------- */
 .about-grid { display: grid; gap: var(--space-8); }
 .about-text { display: grid; gap: var(--space-4); color: var(--color-muted); font-size: 1.0625rem; }
 .about-pillars { display: grid; gap: var(--space-3); }
@@ -421,7 +456,9 @@ p { text-wrap: pretty; }
   box-shadow: 0 0 0 4px rgba(59,183,167,0.15);
 }
 
-/* Cards */
+/* ---------------------------------------------------------------------------
+ * Cards (serviços e soluções)
+ * --------------------------------------------------------------------------- */
 .cards { display: grid; gap: var(--space-5); }
 .card {
   padding: var(--space-6);
@@ -482,6 +519,7 @@ p { text-wrap: pretty; }
   position: relative;
   padding-left: 1.5rem;
 }
+/* Marcador decorativo em CSS (losango) */
 .check-list li::before {
   content: "";
   position: absolute;
@@ -506,7 +544,9 @@ p { text-wrap: pretty; }
   color: var(--color-muted);
 }
 
-/* Differentials */
+/* ---------------------------------------------------------------------------
+ * Diferenciais
+ * --------------------------------------------------------------------------- */
 .differentials {
   display: grid;
   gap: var(--space-3);
@@ -533,7 +573,9 @@ p { text-wrap: pretty; }
 }
 .differential p { color: var(--color-ink); font-weight: 500; }
 
-/* Contact */
+/* ---------------------------------------------------------------------------
+ * Contato e formulário
+ * --------------------------------------------------------------------------- */
 .contact-layout { display: grid; gap: var(--space-6); align-items: start; }
 .form { display: grid; gap: var(--space-5); }
 .form-row { display: grid; gap: var(--space-5); }
@@ -572,7 +614,9 @@ p { text-wrap: pretty; }
 .form__fallback a { color: var(--color-brand); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 .contact-card__btn { margin-top: var(--space-4); justify-self: start; }
 
-/* Footer */
+/* ---------------------------------------------------------------------------
+ * Rodapé
+ * --------------------------------------------------------------------------- */
 .site-footer {
   background: var(--color-brand-deep);
   color: var(--color-white);
@@ -584,6 +628,7 @@ p { text-wrap: pretty; }
   padding-bottom: var(--space-8);
   border-bottom: 1px solid rgba(255,255,255,0.14);
 }
+/* Logo em branco sobre fundo escuro */
 .footer-brand img {
   height: 40px;
   width: auto;
@@ -607,7 +652,9 @@ p { text-wrap: pretty; }
 .footer-bottom { padding-top: var(--space-5); }
 .footer-bottom p { font-size: 0.875rem; color: rgba(255,255,255,0.68); }
 
-/* Reveal animations */
+/* ---------------------------------------------------------------------------
+ * Animação de revelação (controlada por JS; fallback em reduced motion)
+ * --------------------------------------------------------------------------- */
 .reveal {
   opacity: 0;
   transform: translateY(14px);
@@ -618,6 +665,9 @@ p { text-wrap: pretty; }
   transform: translateY(0);
 }
 
+/* ---------------------------------------------------------------------------
+ * Responsividade (mobile-first)
+ * --------------------------------------------------------------------------- */
 @media (min-width: 768px) {
   :root { --gutter: 2rem; }
   .form-row { grid-template-columns: 1fr 1fr; }
@@ -662,6 +712,7 @@ p { text-wrap: pretty; }
   .differentials { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
+/* Preferência de movimento reduzido: remove animações/transições não essenciais */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal {
