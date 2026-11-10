@@ -174,6 +174,72 @@
   }
 
   /* --------------------------------------------------------------------------
+   * Carrossel de soluções
+   * - Cards lado a lado com rolagem horizontal e encaixe por slide
+   * - Setas aparecem apenas quando há mais de um card
+   * - Mantém controles acessíveis e respeita movimento reduzido
+   * -------------------------------------------------------------------------- */
+  var solutionsCarousel = document.querySelector("[data-solutions-carousel]");
+  if (solutionsCarousel) {
+    var carouselViewport = solutionsCarousel.querySelector("[data-carousel-viewport]");
+    var carouselSlides = Array.prototype.slice.call(
+      solutionsCarousel.querySelectorAll("[data-carousel-slide]")
+    );
+    var carouselControls = solutionsCarousel.querySelector("[data-carousel-controls]");
+    var carouselPrev = solutionsCarousel.querySelector("[data-carousel-prev]");
+    var carouselNext = solutionsCarousel.querySelector("[data-carousel-next]");
+    var carouselStatus = solutionsCarousel.querySelector("[data-carousel-status]");
+
+    function updateSolutionsCarousel() {
+      if (!carouselViewport || !carouselSlides.length) return;
+      var maxScroll = carouselViewport.scrollWidth - carouselViewport.clientWidth;
+      var hasOverflow = maxScroll > 4;
+      if (carouselControls) carouselControls.hidden = !hasOverflow;
+
+      var firstSlide = carouselSlides[0];
+      var slideStep = firstSlide ? firstSlide.getBoundingClientRect().width : 1;
+      var track = solutionsCarousel.querySelector("[data-carousel-track]");
+      if (track && carouselSlides.length > 1) {
+        var trackStyle = window.getComputedStyle(track);
+        slideStep += parseFloat(trackStyle.columnGap || trackStyle.gap) || 0;
+      }
+      var currentIndex = Math.min(
+        carouselSlides.length - 1,
+        Math.max(0, Math.round(carouselViewport.scrollLeft / Math.max(1, slideStep)))
+      );
+
+      if (carouselPrev) carouselPrev.disabled = !hasOverflow || carouselViewport.scrollLeft <= 4;
+      if (carouselNext) carouselNext.disabled = !hasOverflow || carouselViewport.scrollLeft >= maxScroll - 4;
+      if (carouselStatus) carouselStatus.textContent = (currentIndex + 1) + " / " + carouselSlides.length;
+      carouselSlides.forEach(function (slide, index) {
+        slide.setAttribute("aria-label", (index + 1) + " de " + carouselSlides.length);
+      });
+    }
+
+    function moveSolutionsCarousel(direction) {
+      if (!carouselViewport) return;
+      var firstSlide = carouselSlides[0];
+      if (!firstSlide) return;
+      var track = solutionsCarousel.querySelector("[data-carousel-track]");
+      var gap = track ? parseFloat(window.getComputedStyle(track).columnGap || window.getComputedStyle(track).gap) || 0 : 0;
+      var distance = firstSlide.getBoundingClientRect().width + gap;
+      var reduceCarouselMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      carouselViewport.scrollBy({
+        left: direction * distance,
+        behavior: reduceCarouselMotion ? "auto" : "smooth"
+      });
+    }
+
+    if (carouselPrev) carouselPrev.addEventListener("click", function () { moveSolutionsCarousel(-1); });
+    if (carouselNext) carouselNext.addEventListener("click", function () { moveSolutionsCarousel(1); });
+    if (carouselViewport) {
+      carouselViewport.addEventListener("scroll", updateSolutionsCarousel, { passive: true });
+      window.addEventListener("resize", updateSolutionsCarousel);
+      updateSolutionsCarousel();
+    }
+  }
+
+  /* --------------------------------------------------------------------------
    * Formulário de contato
    * - Validação acessível (mensagens e aria-invalid)
    * - Máscara de telefone BR
