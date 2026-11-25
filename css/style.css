@@ -672,6 +672,7 @@ p { text-wrap: pretty; }
   :root { --gutter: 2rem; }
   .form-row { grid-template-columns: 1fr 1fr; }
   .cards--services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cards--solutions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .differentials { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .contact-layout { grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); }
   .footer-inner { grid-template-columns: 1fr auto; align-items: start; }
@@ -708,7 +709,7 @@ p { text-wrap: pretty; }
   .hero__visual { display: block; }
   .about-grid { grid-template-columns: 1.1fr 0.9fr; align-items: start; }
   .cards--services { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .cards--solutions { grid-template-columns: minmax(0, 640px); }
+  .cards--solutions { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .differentials { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
